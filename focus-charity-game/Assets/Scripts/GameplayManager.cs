@@ -1,11 +1,20 @@
 using UnityEngine;
 
+[System.Serializable]
+public class CustomersDailyOrder
+{
+    public CustomerSO firstCustomer;
+    public CustomerSO secondCustomer;
+    public CustomerSO thirdCustomer;
+    public CustomerSO fourthCustomer;
+}
+
 public class GameplayManager : MonoBehaviour
 {
     private int dayIndex; // 1-5
     private int customersToday; // 1-however many customers in the game
     
-    public CustomerSO[] customers;
+    public CustomersDailyOrder[] customersEachDayOrder;
     private CustomerSO currentCustomer;
 
 
