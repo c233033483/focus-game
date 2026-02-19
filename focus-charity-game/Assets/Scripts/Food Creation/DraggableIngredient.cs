@@ -4,6 +4,7 @@ using UnityEngine.UIElements;
 
 public class DraggableIngredient : MonoBehaviour, IDraggable
 {
+    [SerializeField] private string ingredientName;
     private Plane draggingPlane;
     private Vector3 offset;
 
@@ -31,12 +32,9 @@ public class DraggableIngredient : MonoBehaviour, IDraggable
 
     public void EndDrag()
     {
-        print("Ending drag");
-        
         if (isInPlacingZone)
-        {
-            print("End drag - in place zone");
-            gameObject.SetActive(false);
+        {            
+            IngredientPlacingEventChannel.PlacingEvent(ingredientName);
             Destroy(gameObject);
         }
     }
@@ -46,7 +44,6 @@ public class DraggableIngredient : MonoBehaviour, IDraggable
     {
         if (col.gameObject.CompareTag("PlaceZone"))
         {
-            print("hello");
             isInPlacingZone = true;
         }
     }

@@ -17,12 +17,13 @@ public class IngredientSelector : MonoBehaviour, IClickable
         
         Vector3 spawnPosition = spawnPoint.transform.position + (Vector3.up / 2);
 
-        Instantiate(ingredient2D, spawnPosition, Quaternion.identity);
+        GameObject newIngredient = Instantiate(ingredient2D, spawnPosition, Quaternion.identity);
+        DraggableIngredient ingredient = newIngredient.GetComponent<DraggableIngredient>();
         ingredientActive = true;
     }
 
     /// <summary>
-    /// Is called by the IngredientObject script so that a new object can be instantiated
+    /// Is called by the DraggableIngredient script so that a new ingredient can be instantiated
     /// </summary>
     public void DeactivateIngredient()
     {
