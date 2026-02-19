@@ -7,7 +7,7 @@
             "id": "5105baeb-34f4-4fdb-9ae2-15801e5871cd",
             "actions": [
                 {
-                    "name": "Interact",
+                    "name": "Press",
                     "type": "Button",
                     "id": "9379e545-ac6b-40a0-a082-978f53b36034",
                     "expectedControlType": "",
@@ -16,13 +16,13 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Position",
-                    "type": "PassThrough",
+                    "name": "Pos",
+                    "type": "Value",
                     "id": "086ceefd-a68b-4c7b-8d39-492f19539018",
                     "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": "",
-                    "initialStateCheck": false
+                    "initialStateCheck": true
                 }
             ],
             "bindings": [
@@ -33,7 +33,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Interact",
+                    "action": "Press",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -44,7 +44,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Interact",
+                    "action": "Press",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -55,7 +55,18 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Position",
+                    "action": "Pos",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "7b941838-b977-40e6-8035-f649392a69aa",
+                    "path": "<Touchscreen>/primaryTouch/position",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Pos",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
