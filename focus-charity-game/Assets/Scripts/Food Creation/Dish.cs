@@ -14,14 +14,9 @@ public enum DishType
 public class Dish : MonoBehaviour
 {
     public DishType dishType;
-    public List<string> currentIngredients;
+    public List<Ingredients> currentIngredients;
     
     public TMP_Text ingredientsText;
-
-    private void Start()
-    {
-        ingredientsText = FindFirstObjectByType<TMP_Text>();
-    }
 
     private void OnEnable()
     {
@@ -38,9 +33,14 @@ public class Dish : MonoBehaviour
     ///  Allows this script to get the placed ingredient without connecting the two scripts directly
     /// </summary>
     /// <param name="ingredient"></param>
-    private void IngredientPlaced(string ingredient)
+    private void IngredientPlaced(Ingredients ingredient)
     {
-        currentIngredients.Add(ingredient.ToLower());
+        currentIngredients.Add(ingredient);
         ingredientsText.text += ingredient + ", ";
+    }
+
+    public void SubmitOrder()
+    {
+        OrderingEventChannel.OnOrderSubmitted(currentIngredients);
     }
 }

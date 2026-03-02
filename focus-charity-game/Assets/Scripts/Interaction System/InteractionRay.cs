@@ -1,5 +1,7 @@
 using System;
+using Unity.Cinemachine;
 using Unity.VisualScripting;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -9,30 +11,34 @@ public class InteractionRay : MonoBehaviour
     private PlayerInput playerInput;
     private InputAction pressAction;
     private InputAction dragAction;
+    private InputAction switchCamAction;
     
     private IDraggable currentlyDragging;
 
     private bool dragging;
-    
-    [SerializeField] private Camera cam;
+
+    public SwitchCamera cameraController;
     
     private void Awake()
     {
         playerInput = GetComponent<PlayerInput>();
         pressAction = playerInput.actions["Press"];
         dragAction = playerInput.actions["Pos"];
+        switchCamAction = playerInput.actions["SwitchCam"];
     }
 
     private void OnEnable()
     {
         pressAction.performed += OnInteract;
         pressAction.canceled += OnCancelled;
+        switchCamAction.performed += SwitchActiveCamera;
     }
 
     private void OnDisable()
     {
         pressAction.performed -= OnInteract;
         pressAction.canceled -= OnCancelled;
+        switchCamAction.performed -= SwitchActiveCamera;
     }
     
     /// <summary>
@@ -47,7 +53,7 @@ public class InteractionRay : MonoBehaviour
 
         Vector2 mousePos = dragAction.ReadValue<Vector2>();
 
-        Ray ray = cam.ScreenPointToRay(mousePos);
+        Ray ray = Camera.main.ScreenPointToRay(mousePos);
         if (Physics.Raycast(ray, out RaycastHit hit, rayLength))
         {
             ClickObject(hit.collider.gameObject);
@@ -84,7 +90,7 @@ public class InteractionRay : MonoBehaviour
     public void OnDragStart()
     {
         Vector2 mousePos = dragAction.ReadValue<Vector2>();
-        Ray ray = cam.ScreenPointToRay(mousePos);
+        Ray ray = Camera.main.ScreenPointToRay(mousePos);
         if (Physics.Raycast(ray, out RaycastHit hit, rayLength))
         {
             if (hit.collider.TryGetComponent(out IDraggable draggable))
@@ -101,7 +107,7 @@ public class InteractionRay : MonoBehaviour
             return;
 
         Vector2 mousePos = Mouse.current.position.ReadValue();
-        Ray ray = cam.ScreenPointToRay(mousePos);
+        Ray ray = Camera.main.ScreenPointToRay(mousePos);
         Debug.DrawRay(ray.origin, ray.direction * rayLength, Color.blue);
         
         currentlyDragging.Drag(ray);
@@ -112,5 +118,10 @@ public class InteractionRay : MonoBehaviour
         print("STOPPING: " + currentlyDragging);
         currentlyDragging?.EndDrag(); //short for if != null
         currentlyDragging = null;
+    }               
+    
+    private void SwitchActiveCamera(InputAction.CallbackContext ctx)
+    {
+        cameraController.SwitchActiveCamera(1);
     }
 }

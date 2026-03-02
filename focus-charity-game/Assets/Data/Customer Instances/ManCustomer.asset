@@ -13,5 +13,13 @@ MonoBehaviour:
   m_Name: ManCustomer
   m_EditorClassIdentifier: Assembly-CSharp::CustomerSO
   customerName: Man
-  customerSprite: {fileID: 0}
+  customerImage: {fileID: 2800000, guid: 2013677b078161d4f965848f20f011ae, type: 3}
   trustLevel: 0
+  dailyOrders:
+  - day: 1
+    sandwichIngredients: 0100000003000000
+  dailyDialogue:
+  - day: 1
+    introDialogue: {fileID: 11400000, guid: ae16027d4dd20394881782f8d656aec4, type: 2}
+    correctOrderDialogue: {fileID: 11400000, guid: f6850808155ef44419fe1d055e620f10, type: 2}
+    incorrectOrderDialogue: {fileID: 11400000, guid: f92178b6eef5f124bb0cbe93b4c4e23d, type: 2}

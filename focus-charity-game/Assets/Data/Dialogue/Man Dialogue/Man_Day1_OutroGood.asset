@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b9cc78131daf33741baef2202a4df247, type: 3}
-  m_Name: Hello DL
+  m_Name: Man_Day1_OutroGood
   m_EditorClassIdentifier: Assembly-CSharp::DialogueAssetSO
   dialogue:
-  - Hii im a child and Im homelesss
+  - Thanks

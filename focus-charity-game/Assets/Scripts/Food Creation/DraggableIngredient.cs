@@ -1,10 +1,9 @@
 using System;
 using UnityEngine;
-using UnityEngine.UIElements;
 
 public class DraggableIngredient : MonoBehaviour, IDraggable
 {
-    [SerializeField] private string ingredientName;
+    [SerializeField] private Ingredients ingredientName;
     private Plane draggingPlane;
     private Vector3 offset;
 
@@ -38,7 +37,6 @@ public class DraggableIngredient : MonoBehaviour, IDraggable
             Destroy(gameObject);
         }
     }
-
     
     private void OnTriggerEnter(Collider col)
     {
