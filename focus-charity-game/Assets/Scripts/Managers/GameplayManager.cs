@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -18,18 +19,16 @@ public class GameplayManager : MonoBehaviour
     {
         if (Instance != null && Instance != this)
         {
-            Destroy(this.gameObject);
+            Destroy(gameObject);
+            return;
         }
-        else
-        {
-            Instance = this;
-        }
+        Instance = this;
+        DontDestroyOnLoad(gameObject);
     }
     
     
     private int dayIndex; // 1-5
     private int customerIndex;
-    private int customersToday; // 1-however many customers in the game
     
     public DailyQueue[] dailyQueues;
     private CustomerSO currentCustomer;
@@ -39,14 +38,18 @@ public class GameplayManager : MonoBehaviour
     public GameObject dayStartPanel;
     public TMP_Text dayText;
 
-    public void Start()
+    public GameObject trustPanel;
+
+    private void Start()
     {
-        dayIndex = 1;
-        dayText.text = "Day " + dayIndex;
+        dayStartPanel.SetActive(true);
+        dayText.text = "Day 1";
     }
     
-    public void DayStart()
+    private void DayStart()
     {
+        dayIndex++;
+        dayText.text = $"Day {dayIndex}";
         customerIndex = 0;
         
         NextCustomer();
@@ -54,18 +57,13 @@ public class GameplayManager : MonoBehaviour
 
     public void NextCustomer()
     {
+        ClearCustomers();
         var currentQueue = dailyQueues[dayIndex - 1];
         
         // Find the next customer for the current day
         if (customerIndex < currentQueue.customersInOrder.Count)
         {
-            currentCustomer = currentQueue.customersInOrder[customerIndex];
-            print(currentCustomer.name);
-            characterPlaceholder.texture = currentCustomer.customerImage;
-            customerIndex++;
-            
-            OrderingSystem.Instance.ShowOrder(dayIndex, currentCustomer);
-            DialogueController.Instance.StartIntroDialogue(currentCustomer, dayIndex);
+            StartCoroutine(NextCustomerRoutine(currentQueue));
         }
         else
         {
@@ -73,10 +71,25 @@ public class GameplayManager : MonoBehaviour
         }
     }
 
+    IEnumerator NextCustomerRoutine(DailyQueue currentQueue)
+    {
+        yield return new WaitForSeconds(1f);
+        characterPlaceholder.gameObject.SetActive(true);
+        
+        currentCustomer = currentQueue.customersInOrder[customerIndex];
+        characterPlaceholder.texture = currentCustomer.customerImage;
+        customerIndex++;
+            
+        OrderingSystem.Instance.ShowOrder(dayIndex, currentCustomer);
+        DialogueController.Instance.StartIntroDialogue(currentCustomer, dayIndex);
+        
+        trustPanel.SetActive(false);
+    }
+
     public void ClearCustomers()
     {
         currentCustomer = null;
-        characterPlaceholder.texture = null;
+        characterPlaceholder.gameObject.SetActive(false);
     }
 
     public void DayEnd()

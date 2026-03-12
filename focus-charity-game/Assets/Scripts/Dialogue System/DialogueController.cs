@@ -5,15 +5,17 @@ using UnityEngine;
 
 public class DialogueController : MonoBehaviour
 {
-    public static DialogueController Instance;
+    public static DialogueController Instance { get; private set; }    
     private void Awake()
     {
-        if (Instance == null)
-            Instance = this;
-        else
-            Destroy(this);
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+        Instance = this;
+        DontDestroyOnLoad(gameObject);
     }
-    
     
     [SerializeField] private TMP_Text dialogueText;
     [SerializeField] private TMP_Text nameText;
@@ -35,9 +37,7 @@ public class DialogueController : MonoBehaviour
         dayIndex = day;
         
         nameText.text = customer.name;
-        
-        DailyDialogue todaysDialogue = customer.dailyDialogue.Find(d => d.day == dayIndex);
-        
+        DailyDialogue todaysDialogue = GetTodaysDialogue(currentCustomer);
         
         StopAllCoroutines();
 
@@ -47,42 +47,37 @@ public class DialogueController : MonoBehaviour
     // Called by OrderingSystem.cs 
     public void StartOutroDialogue(bool wasOrderCorrect)
     {
-        DailyDialogue todaysDialogue = currentCustomer.dailyDialogue.Find(d => d.day == dayIndex);
+        DailyDialogue todaysDialogue = GetTodaysDialogue(currentCustomer);
         
-        if (wasOrderCorrect)
-        {
-            StartCoroutine(RunDialogue(todaysDialogue.correctOrderDialogue, true));
-        }
-        else
-        {
-            StartCoroutine(RunDialogue(todaysDialogue.incorrectOrderDialogue, true));
-        }
+        DialogueAssetSO asset = wasOrderCorrect ? 
+            todaysDialogue.correctOrderDialogue : todaysDialogue.incorrectOrderDialogue;
+        StartCoroutine(RunDialogue(asset, true));
     }
-    
+
+    private DailyDialogue GetTodaysDialogue(CustomerSO customer)
+    {
+        return customer.dailyDialogue.Find(d => d.day == dayIndex);
+    }
 
     IEnumerator RunDialogue(DialogueAssetSO dialogueAsset, bool nextCustomerOnEnd)
     {
-        yield return new WaitForSeconds(0.6f);
-        
         skipLineTriggered = false;
         dialogueBox.SetActive(true);
         
         for (int i = 0; i < dialogueAsset.dialogue.Length; i++)
         {
             dialogueText.text = dialogueAsset.dialogue[i];
-            while (skipLineTriggered == false)
-            {
+            while (!skipLineTriggered)
                 yield return null;
-            }
             skipLineTriggered = false;
         }
         
         dialogueBox.SetActive(false);
-        
+
         if (nextCustomerOnEnd)
+        {
             GameplayManager.Instance.NextCustomer();
-        else ()
-            
+        }
     }
 
     public void SkipLine()

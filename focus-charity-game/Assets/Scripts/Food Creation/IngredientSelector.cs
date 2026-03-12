@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class IngredientSelector : MonoBehaviour, IClickable
 {
-    public GameObject ingredient2D;
-    public GameObject spawnPoint;
+    [SerializeField] private GameObject ingredient2D;
+    [SerializeField] private GameObject spawnPoint;
 
     private bool ingredientActive; //can an ingredient object be spawned?
     
@@ -13,19 +13,19 @@ public class IngredientSelector : MonoBehaviour, IClickable
     /// </summary>
     public void Interact()
     {
-        print("Ingredient was selected");
+        if (ingredientActive) return;
         
         Vector3 spawnPosition = spawnPoint.transform.position + (Vector3.up / 2);
-
         GameObject newIngredient = Instantiate(ingredient2D, spawnPosition, Quaternion.identity);
         DraggableIngredient ingredient = newIngredient.GetComponent<DraggableIngredient>();
+        ingredient.OnIngredientDestroyed += DeactivateIngredient;
         ingredientActive = true;
     }
 
     /// <summary>
-    /// Is called by the DraggableIngredient script so that a new ingredient can be instantiated
+    /// Is called when the current instance of the ingredient is destroyed so a new ingredient can be spawned
     /// </summary>
-    public void DeactivateIngredient()
+    private void DeactivateIngredient()
     {
         ingredientActive = false;
     }

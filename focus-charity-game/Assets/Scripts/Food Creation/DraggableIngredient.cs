@@ -6,8 +6,11 @@ public class DraggableIngredient : MonoBehaviour, IDraggable
     [SerializeField] private Ingredients ingredientName;
     private Plane draggingPlane;
     private Vector3 offset;
+    private bool isInPlacingZone;
 
-    public bool isInPlacingZone;
+    public event Action OnIngredientDestroyed;
+    
+    private const string PLACE_ZONE_TAG = "PlaceZone";
     
     public void BeginDrag(Ray ray)
     {
@@ -31,16 +34,16 @@ public class DraggableIngredient : MonoBehaviour, IDraggable
 
     public void EndDrag()
     {
-        if (isInPlacingZone)
-        {            
-            IngredientPlacingEventChannel.PlacingEvent(ingredientName);
-            Destroy(gameObject);
-        }
+        if (!isInPlacingZone) return;
+        
+        OnIngredientDestroyed?.Invoke();
+        IngredientPlacingEventChannel.PlacingEvent(ingredientName);
+        Destroy(gameObject);
     }
     
     private void OnTriggerEnter(Collider col)
     {
-        if (col.gameObject.CompareTag("PlaceZone"))
+        if (col.CompareTag(PLACE_ZONE_TAG))
         {
             isInPlacingZone = true;
         }
@@ -48,7 +51,7 @@ public class DraggableIngredient : MonoBehaviour, IDraggable
 
     private void OnTriggerExit(Collider col)
     {
-        if (col.gameObject.CompareTag("PlaceZone"))
+        if (col.CompareTag(PLACE_ZONE_TAG))
             isInPlacingZone = false;
     }
 }

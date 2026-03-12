@@ -8,25 +8,25 @@ public class OrderingSystem : MonoBehaviour
 {
     public static OrderingSystem Instance { get; private set; }
 
-    public TMP_Text dialogueText;
-
-    private bool wasOrderRight;
+    [SerializeField] private GameObject trustPanel;
+    [SerializeField] private TMP_Text trustText;
     
     private void Awake()
     {
         if (Instance != null && Instance != this)
         {
-            Destroy(this.gameObject);
+            Destroy(gameObject);
+            return;
         }
-        else
-        {
-            Instance = this;
-        }
+        Instance = this;
+        DontDestroyOnLoad(gameObject);
+        
+        trustPanel.SetActive(false);
     }
 
     private CustomerSO currentCustomer;
-    public DailyOrder currentOrder;
-    public TMP_Text orderText;
+    private DailyOrder currentOrder;
+    private TMP_Text orderText;
     
     private void OnEnable()
     {
@@ -42,35 +42,43 @@ public class OrderingSystem : MonoBehaviour
     {
         currentOrder = customer.GetOrderForToday(day);
         currentCustomer = customer;
+        
+        if (currentOrder == null)
+        {
+            Debug.LogWarning($"No order found for {customer.customerName} on day {day}");
+        }
     }
     
+    /// <summary>
+    ///     When the order is received, the trust is increased here.
+    ///     The trust UI is handled here, may need to be moved when it's not just text.
+    /// </summary>
+    /// <param name="dishProvided"></param>
     private void ReceiveOrder(List<Ingredients> dishProvided)
     {
-        if (CheckOrder(currentOrder.sandwichIngredients, dishProvided))
+        bool wasOrderCorrect = CheckOrder(currentOrder.sandwichIngredients, dishProvided);
+
+        if (wasOrderCorrect)
         {
-            dialogueText.text = "Thank you! This is perfect";
-            wasOrderRight = true;
             currentCustomer.IncreaseTrust(1);
         }
-        else
-        {
-            dialogueText.text = "Oh... thanks...";
-            wasOrderRight = false;
-        }
 
-        StartCoroutine(NextCustomer());
+        trustPanel.SetActive(true);
+        trustText.text = "Trust: " + currentCustomer.trustLevel;
+        
+        StartCoroutine(NextCustomerRoutine(wasOrderCorrect));
     }
 
-    public bool CheckOrder(List<Ingredients> order, List<Ingredients> dish)
+    private bool CheckOrder(List<Ingredients> order, List<Ingredients> dish)
     {
-        HashSet<Ingredients> orderedDish = new HashSet<Ingredients>();
-        HashSet<Ingredients> servedDish = new HashSet<Ingredients>();
+        HashSet<Ingredients> orderedDish = new HashSet<Ingredients>(order);
+        HashSet<Ingredients> servedDish = new HashSet<Ingredients>(dish);
         return orderedDish.SetEquals(servedDish);
     }
 
-    public IEnumerator NextCustomer()
+    private IEnumerator NextCustomerRoutine(bool wasOrderCorrect)
     {
         yield return new WaitForSeconds(1f);
-        DialogueController.Instance.StartOutroDialogue(wasOrderRight);
+        DialogueController.Instance.StartOutroDialogue(wasOrderCorrect);
     }
 }

@@ -126,7 +126,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00486d9e5a337cf428df6d85f29f68dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DraggableIngredient
-  ingredientName: ham
+  ingredientName: 1
   isInPlacingZone: 0
 --- !u!54 &3016631196758263065
 Rigidbody:

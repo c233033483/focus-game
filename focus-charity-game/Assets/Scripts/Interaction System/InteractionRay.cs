@@ -1,7 +1,3 @@
-using System;
-using Unity.Cinemachine;
-using Unity.VisualScripting;
-using UnityEditor;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -15,8 +11,7 @@ public class InteractionRay : MonoBehaviour
     
     private IDraggable currentlyDragging;
 
-    private bool dragging;
-
+    private Camera mainCamera;
     public SwitchCamera cameraController;
     
     private void Awake()
@@ -25,6 +20,8 @@ public class InteractionRay : MonoBehaviour
         pressAction = playerInput.actions["Press"];
         dragAction = playerInput.actions["Pos"];
         switchCamAction = playerInput.actions["SwitchCam"];
+        
+        mainCamera = Camera.main;
     }
 
     private void OnEnable()
@@ -48,12 +45,9 @@ public class InteractionRay : MonoBehaviour
     /// <param name="ctx"></param>
     private void OnInteract(InputAction.CallbackContext ctx)
     {
-        if (pressAction == null)
-            return;
-
         Vector2 mousePos = dragAction.ReadValue<Vector2>();
 
-        Ray ray = Camera.main.ScreenPointToRay(mousePos);
+        Ray ray = mainCamera.ScreenPointToRay(mousePos);
         if (Physics.Raycast(ray, out RaycastHit hit, rayLength))
         {
             ClickObject(hit.collider.gameObject);
@@ -71,26 +65,24 @@ public class InteractionRay : MonoBehaviour
     {
         if (objectToInteractWith.TryGetComponent(out IClickable clickableObject))
         {
+            #if UNITY_EDITOR
             Debug.Log("Found clickable object!");
+            #endif
             clickableObject.Interact();
         }
-
-        if (objectToInteractWith.TryGetComponent(out IDraggable draggableObject))
+        else if (objectToInteractWith.TryGetComponent(out IDraggable draggableObject))
         {
+            #if UNITY_EDITOR
             Debug.Log("Found draggable object!");
+            #endif
             OnDragStart();
         }
     }
-
-    /// <summary>
-    /// Called when the dragAction event is detected.
-    /// Looks for a draggable object with IDraggable
-    /// </summary>
-    /// <param name="ctx"></param>
-    public void OnDragStart()
+    
+    private void OnDragStart()
     {
-        Vector2 mousePos = dragAction.ReadValue<Vector2>();
-        Ray ray = Camera.main.ScreenPointToRay(mousePos);
+        var mousePos = dragAction.ReadValue<Vector2>();
+        var ray = mainCamera.ScreenPointToRay(mousePos);
         if (Physics.Raycast(ray, out RaycastHit hit, rayLength))
         {
             if (hit.collider.TryGetComponent(out IDraggable draggable))
@@ -107,7 +99,7 @@ public class InteractionRay : MonoBehaviour
             return;
 
         Vector2 mousePos = Mouse.current.position.ReadValue();
-        Ray ray = Camera.main.ScreenPointToRay(mousePos);
+        Ray ray = mainCamera.ScreenPointToRay(mousePos);
         Debug.DrawRay(ray.origin, ray.direction * rayLength, Color.blue);
         
         currentlyDragging.Drag(ray);
@@ -115,7 +107,6 @@ public class InteractionRay : MonoBehaviour
     
     private void OnDragEnd()
     {
-        print("STOPPING: " + currentlyDragging);
         currentlyDragging?.EndDrag(); //short for if != null
         currentlyDragging = null;
     }               
