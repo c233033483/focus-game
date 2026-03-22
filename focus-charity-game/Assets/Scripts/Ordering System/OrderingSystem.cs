@@ -60,7 +60,7 @@ public class OrderingSystem : MonoBehaviour
 
         if (wasOrderCorrect)
         {
-            currentCustomer.IncreaseTrust(1);
+            IndexBookManager.Instance.IncreaseCustomerTrust(currentCustomer);
         }
 
         trustPanel.SetActive(true);

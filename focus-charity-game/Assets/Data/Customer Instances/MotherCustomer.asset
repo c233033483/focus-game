@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CustomerSO
   customerName: Mother
   customerImage: {fileID: 2800000, guid: aac09c950c6477346b00280df382dee0, type: 3}
+  customerIndex: 3
   trustLevel: 0
   dailyOrders:
   - day: 1

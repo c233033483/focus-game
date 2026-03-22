@@ -29,18 +29,21 @@ public class Dish : MonoBehaviour
     }
     
     /// <summary>
-    ///  This method is triggered when any ingredient is placed in a PlaceZone
-    ///  Allows this script to get the placed ingredient without connecting the two scripts directly
+    ///     This method is triggered when any ingredient is placed in a PlaceZone
+    ///     Allows this script to get the placed ingredient without connecting the two scripts directly
+    ///     The dish gameobject can be updated here in the future
     /// </summary>
     /// <param name="ingredient"></param>
     private void IngredientPlaced(Ingredients ingredient)
     {
         currentIngredients.Add(ingredient);
-        ingredientsText.text += ingredient + ", ";
+        ingredientsText.text += ingredient + ", "; //placeholder for dish gameobject to be updated later
     }
 
     public void SubmitOrder()
     {
         OrderingEventChannel.OnOrderSubmitted(currentIngredients);
+        currentIngredients.Clear();
+        ingredientsText.text = "Current ingredients: ";
     }
 }

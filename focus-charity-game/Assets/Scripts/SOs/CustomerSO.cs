@@ -31,6 +31,7 @@ public class CustomerSO : ScriptableObject
 {
     public string customerName;
     public Texture customerImage;
+    public int customerIndex;
 
     public float trustLevel;
     

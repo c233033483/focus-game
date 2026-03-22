@@ -32,6 +32,9 @@ public class DraggableIngredient : MonoBehaviour, IDraggable
         }
     }
 
+    /// <summary>
+    ///     If it's in the placing zone, the ingredient is placed
+    /// </summary>
     public void EndDrag()
     {
         if (!isInPlacingZone) return;
@@ -52,6 +55,8 @@ public class DraggableIngredient : MonoBehaviour, IDraggable
     private void OnTriggerExit(Collider col)
     {
         if (col.CompareTag(PLACE_ZONE_TAG))
+        {
             isInPlacingZone = false;
+        }
     }
 }

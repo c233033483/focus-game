@@ -69,6 +69,8 @@ public class GameplayManager : MonoBehaviour
         {
             DayEnd();
         }
+        
+        trustPanel.SetActive(false);
     }
 
     IEnumerator NextCustomerRoutine(DailyQueue currentQueue)
@@ -82,8 +84,6 @@ public class GameplayManager : MonoBehaviour
             
         OrderingSystem.Instance.ShowOrder(dayIndex, currentCustomer);
         DialogueController.Instance.StartIntroDialogue(currentCustomer, dayIndex);
-        
-        trustPanel.SetActive(false);
     }
 
     public void ClearCustomers()
@@ -92,8 +92,16 @@ public class GameplayManager : MonoBehaviour
         characterPlaceholder.gameObject.SetActive(false);
     }
 
-    public void DayEnd()
+    private void DayEnd()
     {
-        dayStartPanel.SetActive(true);   
+        if (dayIndex == 5)
+        {
+            print("Game over!");
+        }
+        else
+        {
+            dayStartPanel.SetActive(true);
+            DayStart();
+        }
     }
 }

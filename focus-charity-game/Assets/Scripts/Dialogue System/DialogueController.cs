@@ -72,6 +72,8 @@ public class DialogueController : MonoBehaviour
             skipLineTriggered = false;
         }
         
+        //if last dialogue, turn on start order button
+        
         dialogueBox.SetActive(false);
 
         if (nextCustomerOnEnd)
