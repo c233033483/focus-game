@@ -13,7 +13,10 @@ MonoBehaviour:
   m_Name: GrandmaCustomer
   m_EditorClassIdentifier: Assembly-CSharp::CustomerSO
   customerName: Customer
-  customerImage: {fileID: 2800000, guid: 08fc6de61b4f5e244b2f747a0e76f159, type: 3}
+  idleExpression: {fileID: 7289485, guid: 08fc6de61b4f5e244b2f747a0e76f159, type: 3}
+  sadExpression: {fileID: 7289485, guid: 08fc6de61b4f5e244b2f747a0e76f159, type: 3}
+  happyExpression: {fileID: 7289485, guid: 08fc6de61b4f5e244b2f747a0e76f159, type: 3}
+  customerIndex: 0
   trustLevel: 0
   dailyOrders:
   - day: 1

@@ -13,12 +13,14 @@ MonoBehaviour:
   m_Name: ManCustomer
   m_EditorClassIdentifier: Assembly-CSharp::CustomerSO
   customerName: Man
-  customerImage: {fileID: 2800000, guid: 2013677b078161d4f965848f20f011ae, type: 3}
+  idleExpression: {fileID: -1962781604, guid: 2013677b078161d4f965848f20f011ae, type: 3}
+  sadExpression: {fileID: -1962781604, guid: 2013677b078161d4f965848f20f011ae, type: 3}
+  happyExpression: {fileID: -1962781604, guid: 2013677b078161d4f965848f20f011ae, type: 3}
   customerIndex: 2
   trustLevel: 0
   dailyOrders:
   - day: 1
-    sandwichIngredients: 0100000003000000
+    sandwichIngredients: 0100000000000000
   dailyDialogue:
   - day: 1
     introDialogue: {fileID: 11400000, guid: ae16027d4dd20394881782f8d656aec4, type: 2}

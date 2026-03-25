@@ -69,10 +69,6 @@ public class OrderingSystem : MonoBehaviour
         trustText.text = "Trust: " + currentCustomer.trustLevel;
         trustPanel.SetActive(true);
         
-        Debug.Log("Panel active: " + trustPanel.activeSelf);
-        Debug.Log("Text active: " + trustText.gameObject.activeSelf);
-        Debug.Log("Text parent: " + trustText.transform.parent.name);
-        
         StartCoroutine(NextCustomerRoutine(wasOrderCorrect));
     }
 
@@ -87,5 +83,6 @@ public class OrderingSystem : MonoBehaviour
     {
         yield return new WaitForSeconds(1f);
         DialogueController.Instance.StartOutroDialogue(wasOrderCorrect);
+        GameplayManager.Instance.UpdateExpression(wasOrderCorrect);
     }
 }

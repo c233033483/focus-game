@@ -30,7 +30,9 @@ public class DailyDialogue
 public class CustomerSO : ScriptableObject
 {
     public string customerName;
-    public Texture customerImage;
+    public Sprite idleExpression;
+    public Sprite sadExpression;
+    public Sprite happyExpression;
     public int customerIndex;
 
     public float trustLevel;

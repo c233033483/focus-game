@@ -33,7 +33,7 @@ public class GameplayManager : MonoBehaviour
     public DailyQueue[] dailyQueues;
     private CustomerSO currentCustomer;
 
-    public RawImage characterPlaceholder;
+    public Image characterPlaceholder;
 
     public GameObject dayStartPanel;
     public TMP_Text dayText;
@@ -79,7 +79,7 @@ public class GameplayManager : MonoBehaviour
         characterPlaceholder.gameObject.SetActive(true);
         
         currentCustomer = currentQueue.customersInOrder[customerIndex];
-        characterPlaceholder.texture = currentCustomer.customerImage;
+        characterPlaceholder.sprite = currentCustomer.idleExpression;
         customerIndex++;
             
         OrderingSystem.Instance.ShowOrder(dayIndex, currentCustomer);
@@ -90,6 +90,15 @@ public class GameplayManager : MonoBehaviour
     {
         currentCustomer = null;
         characterPlaceholder.gameObject.SetActive(false);
+    }
+
+    public void UpdateExpression(bool wasOrderCorrect)
+    {
+        if (wasOrderCorrect)
+            characterPlaceholder.sprite = currentCustomer.happyExpression;
+        else
+            characterPlaceholder.sprite = currentCustomer.sadExpression;
+            
     }
 
     private void DayEnd()
