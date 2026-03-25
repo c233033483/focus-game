@@ -5,4 +5,6 @@ public class DialogueAssetSO : ScriptableObject
 {
     [TextArea]
     public string[] dialogue;
+
+    public bool unlockOrderButton;
 }

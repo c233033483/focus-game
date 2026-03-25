@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DialogueController : MonoBehaviour
 {
@@ -20,6 +21,7 @@ public class DialogueController : MonoBehaviour
     [SerializeField] private TMP_Text dialogueText;
     [SerializeField] private TMP_Text nameText;
     [SerializeField] private GameObject dialogueBox;
+    [SerializeField] private Button starOrderButton;
 
     private CustomerSO currentCustomer;
     private int dayIndex;
@@ -28,6 +30,7 @@ public class DialogueController : MonoBehaviour
     private void Start()
     {
         dialogueBox.SetActive(false);
+        starOrderButton.gameObject.SetActive(false);
     }
 
     // Called by GameplayManager.cs
@@ -71,9 +74,10 @@ public class DialogueController : MonoBehaviour
                 yield return null;
             skipLineTriggered = false;
         }
-        
-        //if last dialogue, turn on start order button
-        
+
+        if (dialogueAsset.unlockOrderButton)
+            starOrderButton.gameObject.SetActive(true);
+            
         dialogueBox.SetActive(false);
 
         if (nextCustomerOnEnd)
@@ -85,5 +89,10 @@ public class DialogueController : MonoBehaviour
     public void SkipLine()
     {
         skipLineTriggered = true;
+    }
+
+    public void TurnOffStartOrderButton()
+    {
+        starOrderButton.gameObject.SetActive(false);
     }
 }
