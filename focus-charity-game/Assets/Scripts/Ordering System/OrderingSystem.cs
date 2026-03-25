@@ -20,14 +20,17 @@ public class OrderingSystem : MonoBehaviour
         }
         Instance = this;
         DontDestroyOnLoad(gameObject);
-        
-        trustPanel.SetActive(false);
     }
 
     private CustomerSO currentCustomer;
     private DailyOrder currentOrder;
     private TMP_Text orderText;
-    
+
+    private void Start()
+    {
+        trustPanel.SetActive(false);
+    }
+
     private void OnEnable()
     {
         OrderingEventChannel.OrderSubmitted += ReceiveOrder;
@@ -62,9 +65,13 @@ public class OrderingSystem : MonoBehaviour
         {
             IndexBookManager.Instance.IncreaseCustomerTrust(currentCustomer);
         }
-
-        trustPanel.SetActive(true);
+        
         trustText.text = "Trust: " + currentCustomer.trustLevel;
+        trustPanel.SetActive(true);
+        
+        Debug.Log("Panel active: " + trustPanel.activeSelf);
+        Debug.Log("Text active: " + trustText.gameObject.activeSelf);
+        Debug.Log("Text parent: " + trustText.transform.parent.name);
         
         StartCoroutine(NextCustomerRoutine(wasOrderCorrect));
     }

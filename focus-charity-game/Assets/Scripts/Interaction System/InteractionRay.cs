@@ -38,6 +38,14 @@ public class InteractionRay : MonoBehaviour
         switchCamAction.performed -= SwitchActiveCamera;
     }
     
+    public void SetInteractionEnabled(bool interactionEnabled)
+    {
+        if (interactionEnabled)
+            pressAction.Enable();
+        else
+            pressAction.Disable();
+    }
+    
     /// <summary>
     /// Called when the pressAction event is detected.
     /// Looks for a clickable object with IClickable
@@ -98,7 +106,7 @@ public class InteractionRay : MonoBehaviour
         if (currentlyDragging == null)
             return;
 
-        Vector2 mousePos = Mouse.current.position.ReadValue();
+        Vector2 mousePos = dragAction.ReadValue<Vector2>();
         Ray ray = mainCamera.ScreenPointToRay(mousePos);
         Debug.DrawRay(ray.origin, ray.direction * rayLength, Color.blue);
         

@@ -1978,6 +1978,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bd4b4206bb2f7a4fb0cafb581ab5927, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SwitchCamera
+  interactionRay: {fileID: 2021354228}
   orderCam: {fileID: 15433453}
   sandwichCam: {fileID: 1954479779}
   cookingUiPanel: {fileID: 246972610}
@@ -5522,7 +5523,7 @@ MonoBehaviour:
   characterPlaceholder: {fileID: 218719061}
   dayStartPanel: {fileID: 488955210}
   dayText: {fileID: 816197437}
-  trustPanel: {fileID: 1315179723}
+  trustPanel: {fileID: 789710703}
 --- !u!1 &1240970228
 GameObject:
   m_ObjectHideFlags: 0
@@ -8287,7 +8288,7 @@ MonoBehaviour:
   - {fileID: 889825526}
   - {fileID: 809290973}
   - {fileID: 389432619}
-  indexBookObject: {fileID: 0}
+  indexBookObject: {fileID: 1139395127}
 --- !u!1 &1988859335
 GameObject:
   m_ObjectHideFlags: 0

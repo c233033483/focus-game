@@ -4,9 +4,10 @@ using Unity.Cinemachine;
 
 public class SwitchCamera : MonoBehaviour
 {
+    public InteractionRay interactionRay;
+    
     public CinemachineCamera orderCam;
     public CinemachineCamera sandwichCam;
-    private int camIndex;
 
     public GameObject cookingUiPanel;
     public GameObject orderingUiPanel;
@@ -23,16 +24,14 @@ public class SwitchCamera : MonoBehaviour
             CameraManager.SwitchCamera(orderCam);
             orderingUiPanel.SetActive(true);
             cookingUiPanel.SetActive(false);
+            interactionRay.SetInteractionEnabled(false);
         }
         else if (cam == 2)
         {
             CameraManager.SwitchCamera(sandwichCam);
             cookingUiPanel.SetActive(true);
             orderingUiPanel.SetActive(false);
-        }
-        else
-        {
-            camIndex = 1;
+            interactionRay.SetInteractionEnabled(true);
         }
     }
 }
