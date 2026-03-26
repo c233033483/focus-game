@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e447c6df1775bf24bab61054deeb9e9e, type: 3}
   m_Name: ChildCustomer
   m_EditorClassIdentifier: Assembly-CSharp::CustomerSO
-  customerName: Child
+  customerName: Noah
   idleExpression: {fileID: -379630036, guid: f98a035470e48b64d866edff12494cc8, type: 3}
   sadExpression: {fileID: 943248408, guid: f44ebc2f860e95d47a23613805fee07f, type: 3}
   happyExpression: {fileID: -1587411376, guid: 92f1602f7f7e10845862ea9692ca8db2, type: 3}
   customerIndex: 1
-  trustLevel: 1
+  trustLevel: 0
   dailyOrders:
   - day: 1
     sandwichIngredients: 00000000

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e447c6df1775bf24bab61054deeb9e9e, type: 3}
   m_Name: ManCustomer
   m_EditorClassIdentifier: Assembly-CSharp::CustomerSO
-  customerName: Man
+  customerName: Paul
   idleExpression: {fileID: -1962781604, guid: 2013677b078161d4f965848f20f011ae, type: 3}
   sadExpression: {fileID: -1962781604, guid: 2013677b078161d4f965848f20f011ae, type: 3}
   happyExpression: {fileID: -1962781604, guid: 2013677b078161d4f965848f20f011ae, type: 3}

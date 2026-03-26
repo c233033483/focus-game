@@ -39,7 +39,7 @@ public class DialogueController : MonoBehaviour
         currentCustomer = customer;
         dayIndex = day;
         
-        nameText.text = customer.name;
+        nameText.text = customer.customerName;
         DailyDialogue todaysDialogue = GetTodaysDialogue(currentCustomer);
         
         StopAllCoroutines();

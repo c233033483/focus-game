@@ -49,9 +49,7 @@ public class GameplayManager : MonoBehaviour
     
     private void DayStart()
     {
-        dayText.text = $"Day {dayIndex}";
         customerIndex = 0;
-        
         NextCustomer();
     }
 
@@ -80,10 +78,10 @@ public class GameplayManager : MonoBehaviour
         
         currentCustomer = currentQueue.customersInOrder[customerIndex];
         characterPlaceholder.sprite = currentCustomer.idleExpression;
-        customerIndex++;
             
         OrderingSystem.Instance.ShowOrder(dayIndex, currentCustomer);
         DialogueController.Instance.StartIntroDialogue(currentCustomer, dayIndex);
+        customerIndex++;
     }
 
     public void ClearCustomers()
@@ -98,7 +96,6 @@ public class GameplayManager : MonoBehaviour
             characterPlaceholder.sprite = currentCustomer.happyExpression;
         else
             characterPlaceholder.sprite = currentCustomer.sadExpression;
-            
     }
 
     private void DayEnd()
@@ -109,11 +106,9 @@ public class GameplayManager : MonoBehaviour
         }
         else
         {
-            dayStartPanel.SetActive(true);
             dayIndex++;
-            DayStart();
+            dayText.text = $"Day {dayIndex}";
+            dayStartPanel.SetActive(true);
         }
-        
-        
     }
 }
