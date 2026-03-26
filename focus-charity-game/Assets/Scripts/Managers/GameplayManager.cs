@@ -27,7 +27,7 @@ public class GameplayManager : MonoBehaviour
     }
     
     
-    private int dayIndex; // 1-5
+    [SerializeField] private int dayIndex; // 1-5
     private int customerIndex;
     
     public DailyQueue[] dailyQueues;
@@ -43,12 +43,12 @@ public class GameplayManager : MonoBehaviour
     private void Start()
     {
         dayStartPanel.SetActive(true);
+        dayIndex = 1;
         dayText.text = "Day 1";
     }
     
     private void DayStart()
     {
-        dayIndex++;
         dayText.text = $"Day {dayIndex}";
         customerIndex = 0;
         
@@ -110,7 +110,10 @@ public class GameplayManager : MonoBehaviour
         else
         {
             dayStartPanel.SetActive(true);
+            dayIndex++;
             DayStart();
         }
+        
+        
     }
 }

@@ -20,9 +20,33 @@ MonoBehaviour:
   trustLevel: 0
   dailyOrders:
   - day: 1
-    sandwichIngredients: 010000000200000003000000
+    sandwichIngredients: 0100000000000000
+  - day: 2
+    sandwichIngredients: 0100000000000000
+  - day: 3
+    sandwichIngredients: 0100000000000000
+  - day: 4
+    sandwichIngredients: 0100000000000000
+  - day: 1
+    sandwichIngredients: 0100000000000000
   dailyDialogue:
   - day: 1
     introDialogue: {fileID: 11400000, guid: 435bb8c6f37f3284aa00c1c3c1ecda17, type: 2}
     correctOrderDialogue: {fileID: 11400000, guid: 219e986d77cd54b44a60ed0087206e0d, type: 2}
     incorrectOrderDialogue: {fileID: 11400000, guid: befcd9e61240e3e43a047a18bef585d4, type: 2}
+  - day: 2
+    introDialogue: {fileID: 11400000, guid: 47995440c703ae24cbadb9226e9451f4, type: 2}
+    correctOrderDialogue: {fileID: 11400000, guid: a2f37cf413afd49419981a4ea63ce44f, type: 2}
+    incorrectOrderDialogue: {fileID: 11400000, guid: 8861845d5e916e148a82a2af45ad2ac8, type: 2}
+  - day: 3
+    introDialogue: {fileID: 11400000, guid: 3375c377ad8cb6d46bed02a6167b1b63, type: 2}
+    correctOrderDialogue: {fileID: 11400000, guid: 5ad6c83db2aa708489185882a7925fd1, type: 2}
+    incorrectOrderDialogue: {fileID: 11400000, guid: 2a5085ce795c1a044a7782e043560e66, type: 2}
+  - day: 4
+    introDialogue: {fileID: 11400000, guid: bb386835f8e11904393ec356f56cfe8c, type: 2}
+    correctOrderDialogue: {fileID: 11400000, guid: 770fce847d28a8944b075bd4618f3e9f, type: 2}
+    incorrectOrderDialogue: {fileID: 11400000, guid: 2911dc8962e2765469c133f573c614e2, type: 2}
+  - day: 5
+    introDialogue: {fileID: 11400000, guid: 3a25686a64fd38f4888631b81a74871d, type: 2}
+    correctOrderDialogue: {fileID: 11400000, guid: 5ff8a661da49dae40a5cd5cccce4553e, type: 2}
+    incorrectOrderDialogue: {fileID: 11400000, guid: 0c655de2a8b741247a5a21962fe34bcd, type: 2}
