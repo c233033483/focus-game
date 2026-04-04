@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 7a3ba8efecb31924dad3a75a62ea53bd
+guid: e654bbbbcad649e418664753ea0cf096
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
@@ -9,6 +9,11 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: coffeeCup_mtl
     second: {fileID: 2100000, guid: fdeb9e0305498114cab71ae6aa933c09, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: standardSurface1
+    second: {fileID: 2100000, guid: ae0c7bd99949e78458d8615fb7deb0fc, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -84,7 +89,7 @@ ModelImporter:
     blendShapeNormalImportMode: 1
     normalSmoothingSource: 0
   referencedClips: []
-  importAnimation: 1
+  importAnimation: 0
   humanDescription:
     serializedVersion: 3
     human: []
@@ -96,7 +101,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 0.65
+    globalScale: 65
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0
