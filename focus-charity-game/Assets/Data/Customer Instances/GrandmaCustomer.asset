@@ -16,8 +16,9 @@ MonoBehaviour:
   idleExpression: {fileID: 7289485, guid: 08fc6de61b4f5e244b2f747a0e76f159, type: 3}
   sadExpression: {fileID: 7289485, guid: 08fc6de61b4f5e244b2f747a0e76f159, type: 3}
   happyExpression: {fileID: 7289485, guid: 08fc6de61b4f5e244b2f747a0e76f159, type: 3}
-  customerIndex: 0
+  customerIndex: 3
   trustLevel: 0
+  serviceRequired: 5
   dailyOrders:
   - day: 1
     sandwichIngredients: 0100000002000000
@@ -50,3 +51,8 @@ MonoBehaviour:
     introDialogue: {fileID: 11400000, guid: 9883a13b335ffb541b173deea6f75d6d, type: 2}
     correctOrderDialogue: {fileID: 11400000, guid: 836f07e10f8a6f547a41a97fedb61221, type: 2}
     incorrectOrderDialogue: {fileID: 11400000, guid: 446d56f137ee2b249a7199daa0d68726, type: 2}
+  endgameDialogue:
+    day: 0
+    introDialogue: {fileID: 11400000, guid: 0bdbd78802c578340aa3f7e02ecf7394, type: 2}
+    correctOrderDialogue: {fileID: 11400000, guid: 7dfec04bbcc75d543bac46a4537fa95f, type: 2}
+    incorrectOrderDialogue: {fileID: 11400000, guid: a1bf4f6ab031a12408285d5ff4ed8b78, type: 2}

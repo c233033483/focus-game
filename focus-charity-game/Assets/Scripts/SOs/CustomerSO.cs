@@ -35,10 +35,13 @@ public class CustomerSO : ScriptableObject
     public Sprite happyExpression;
     public int customerIndex;
 
-    public float trustLevel;
+    public int trustLevel;
+    public Services serviceRequired;
     
     public List<DailyOrder> dailyOrders;
     public List<DailyDialogue> dailyDialogue;
+
+    public DailyDialogue endgameDialogue;
     
     public DailyOrder GetOrderForToday(int day)
     {

@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DialogueAssetSO
   dialogue:
   - "Oh wow, this is just what I needed!\t"
-  - It has been so hard to afford good food lately that I forgot how good it tastes.
+  - I haven't been able to affort real food recently...
+  - I almost forgot how good it tastes.
   - It looks like prices are going up every day!
   - I hope I'll be able to come here again soon...
   unlockOrderButton: 0

@@ -38,23 +38,46 @@ public class DialogueController : MonoBehaviour
     {
         currentCustomer = customer;
         dayIndex = day;
-        
         nameText.text = customer.customerName;
         DailyDialogue todaysDialogue = GetTodaysDialogue(currentCustomer);
-        
         StopAllCoroutines();
-
-        StartCoroutine(RunDialogue(todaysDialogue.introDialogue, false));
+        StartCoroutine(RunDialogue(todaysDialogue.introDialogue));
     }
 
     // Called by OrderingSystem.cs 
     public void StartOutroDialogue(bool wasOrderCorrect)
     {
         DailyDialogue todaysDialogue = GetTodaysDialogue(currentCustomer);
-        
         DialogueAssetSO asset = wasOrderCorrect ? 
             todaysDialogue.correctOrderDialogue : todaysDialogue.incorrectOrderDialogue;
-        StartCoroutine(RunDialogue(asset, true));
+        
+        StartCoroutine(RunDialogue(asset, () =>
+        {
+            if (currentCustomer.trustLevel >= 4)
+            {
+                PhoneBookManager.Instance.SetCustomer(currentCustomer);
+                IndexBookManager.Instance.EnableHelp(currentCustomer);
+                StartHelpDialogue();
+            }
+            else
+            {
+                GameplayManager.Instance.NextCustomer();
+            }
+        }));
+    }
+
+    private void StartHelpDialogue()
+    {
+        DailyDialogue todaysDialogue = currentCustomer.endgameDialogue;
+        StartCoroutine(RunDialogue(todaysDialogue.introDialogue));
+    }
+
+    public void StartHelpOutroDialogue(bool wasServiceCorrect)
+    {
+        DailyDialogue todaysDialogue = currentCustomer.endgameDialogue;
+        DialogueAssetSO asset = wasServiceCorrect ? 
+            todaysDialogue.correctOrderDialogue : todaysDialogue.incorrectOrderDialogue;
+        StartCoroutine(RunDialogue(asset, () => GameplayManager.Instance.NextCustomer()));
     }
 
     private DailyDialogue GetTodaysDialogue(CustomerSO customer)
@@ -62,7 +85,7 @@ public class DialogueController : MonoBehaviour
         return customer.dailyDialogue.Find(d => d.day == dayIndex);
     }
 
-    IEnumerator RunDialogue(DialogueAssetSO dialogueAsset, bool nextCustomerOnEnd)
+    private IEnumerator RunDialogue(DialogueAssetSO dialogueAsset, Action onEnd = null)
     {
         skipLineTriggered = false;
         dialogueBox.SetActive(true);
@@ -79,11 +102,7 @@ public class DialogueController : MonoBehaviour
             starOrderButton.gameObject.SetActive(true);
             
         dialogueBox.SetActive(false);
-
-        if (nextCustomerOnEnd)
-        {
-            GameplayManager.Instance.NextCustomer();
-        }
+        onEnd?.Invoke();
     }
 
     public void SkipLine()
