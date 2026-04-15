@@ -10,11 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b9cc78131daf33741baef2202a4df247, type: 3}
-  m_Name: Mother_Day1_OutroGood
+  m_Name: Man_Trust_CorrectHelp
   m_EditorClassIdentifier: Assembly-CSharp::DialogueAssetSO
   dialogue:
-  - Thanks so much.
-  - I'm so tired from work these days...
-  - I don't have the time or energy to cook...
-  - Bye.
+  - This sounds really helpful.
+  - Thanks for this! And all the yummy food.
   unlockOrderButton: 0

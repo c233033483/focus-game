@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DialogueAssetSO
   dialogue:
   - Thanks so much.
-  - I'm so tired from work these days that I don't have time or energy to cook...
+  - 'I''m so tired from work these days '
+  - I don't have time or energy to cook...
   - Bye.
   unlockOrderButton: 0

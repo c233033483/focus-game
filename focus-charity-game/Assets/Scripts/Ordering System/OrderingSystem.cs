@@ -67,7 +67,7 @@ public class OrderingSystem : MonoBehaviour
         }
         
         trustText.text = "Trust: " + currentCustomer.trustLevel;
-        trustPanel.SetActive(true);
+        trustPanel.SetActive(true); //trigger animation here
         
         StartCoroutine(NextCustomerRoutine(wasOrderCorrect));
     }
