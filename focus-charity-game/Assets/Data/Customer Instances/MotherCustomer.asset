@@ -17,7 +17,7 @@ MonoBehaviour:
   sadExpression: {fileID: -667689333, guid: aac09c950c6477346b00280df382dee0, type: 3}
   happyExpression: {fileID: -667689333, guid: aac09c950c6477346b00280df382dee0, type: 3}
   customerIndex: 1
-  trustLevel: 1
+  trustLevel: 0
   serviceRequired: 0
   dailyOrders:
   - day: 1

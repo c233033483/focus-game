@@ -66,7 +66,7 @@ public class OrderingSystem : MonoBehaviour
             IndexBookManager.Instance.IncreaseCustomerTrust(currentCustomer);
         }
         
-        trustText.text = "Trust: " + currentCustomer.trustLevel;
+        //trustText.text = "Trust: " + currentCustomer.trustLevel;
         trustPanel.SetActive(true); //trigger animation here
         
         StartCoroutine(NextCustomerRoutine(wasOrderCorrect));

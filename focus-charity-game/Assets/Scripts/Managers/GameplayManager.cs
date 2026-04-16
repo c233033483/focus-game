@@ -39,9 +39,16 @@ public class GameplayManager : MonoBehaviour
     public TMP_Text dayText;
 
     public GameObject trustPanel;
+    
+    private int customersHelped;
+    [SerializeField] private GameObject endGamePanelGood;
+    [SerializeField] private GameObject endGamePanelBad;
 
     private void Start()
     {
+        endGamePanelBad.SetActive(false);
+        endGamePanelGood.SetActive(false);
+        
         dayStartPanel.SetActive(true);
         dayIndex = 1;
         dayText.text = "Day 1";
@@ -102,7 +109,14 @@ public class GameplayManager : MonoBehaviour
     {
         if (dayIndex == 5)
         {
-            print("Game over!");
+            if (customersHelped == 4)
+            {
+                endGamePanelGood.SetActive(true);
+            }
+            else
+            {
+                endGamePanelBad.SetActive(true);
+            }
         }
         else
         {
