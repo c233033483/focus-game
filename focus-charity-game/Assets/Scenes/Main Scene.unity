@@ -18639,6 +18639,7 @@ MonoBehaviour:
   ingredientsText: {fileID: 749489323}
   submitSandwichOrderButton: {fileID: 1297403944}
   submitCoffeeOrderButton: {fileID: 371004577}
+  sandwichVisualiserScipt: {fileID: 6082515673144031881}
 --- !u!1 &2115023229
 GameObject:
   m_ObjectHideFlags: 0
@@ -19796,6 +19797,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6682d53cdb3727c4ea557c3513a2978e, type: 3}
+--- !u!114 &6082515673144031881 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6293792644514637185, guid: 6682d53cdb3727c4ea557c3513a2978e, type: 3}
+  m_PrefabInstance: {fileID: 6082515673144031880}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9ee9c9abdf35954c947cb04cdb2f8f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SandwichVisualiser
 --- !u!23 &6098258884415363566
 MeshRenderer:
   m_ObjectHideFlags: 0

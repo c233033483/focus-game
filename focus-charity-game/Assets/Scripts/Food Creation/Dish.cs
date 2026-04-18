@@ -18,6 +18,9 @@ public class Dish : MonoBehaviour
     public Button submitSandwichOrderButton;
     public Button submitCoffeeOrderButton;
 
+    //sandwichvisualiser
+    public SandwichVisualiser sandwichVisualiserScipt;
+
     private void OnEnable()
     {
         IngredientPlacingEventChannel.OnIngredientPlacingEvent += IngredientPlaced;
@@ -38,6 +41,9 @@ public class Dish : MonoBehaviour
     public void SetDishType(DishType type)
     {
         dishType = type;
+
+        //sandwichvisualiser
+        sandwichVisualiserScipt.SandwichStart();
     }
     
 
@@ -54,17 +60,35 @@ public class Dish : MonoBehaviour
         if (dishType == DishType.Sandwich) currentSandwichIngredients.Add(ingredient);
         else if (dishType == DishType.Coffee) currentCoffeeIngredients.Add(ingredient);
         ingredientsText.text += ingredient + ", "; //placeholder for dish gameobject to be updated later
+
+        //sandwichvisuals
+        if (ingredient == Ingredients.Tomato)
+        {
+            sandwichVisualiserScipt.Tomato();
+        }
+        else if (ingredient == Ingredients.Cheese)
+        {
+            sandwichVisualiserScipt.Cheese();
+        }
+        else if(ingredient == Ingredients.Ham)
+        {
+            sandwichVisualiserScipt.Ham();
+        }
     }
 
     public void FinishSandwichCreation()
     {
         ingredientsText.text = "Current ingredients: ";
+
+        //sandwichvisualiser
+        sandwichVisualiserScipt.SandwichFinish();
         
     }
 
     public void FinishCoffeeCreation()
     {
         ingredientsText.text = "Current ingredients: ";
+
     }
 
     public void SubmitOrder()
@@ -74,5 +98,9 @@ public class Dish : MonoBehaviour
         currentCoffeeIngredients.Clear();
         submitSandwichOrderButton.gameObject.SetActive(false);
         submitCoffeeOrderButton.gameObject.SetActive(false);
+
+        //sandwichvisualiser
+        sandwichVisualiserScipt.SandwichReset();
+
     }
 }

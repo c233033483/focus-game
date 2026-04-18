@@ -27,18 +27,18 @@ public class SandwichVisualiser : MonoBehaviour
 
     //ALL DIFFERENT STATES OF SANDWICH can be called with the following methods:
 
-    void SandwichStart() // Call this when the minigame starts to open the sandwich
+    public void SandwichStart() // Call this when the minigame starts to open the sandwich
     {
         anim.SetFloat("state",1); //Changes the animation to sw_open
     }
 
 
-    void SandwichFinish() // Call this when the sandwich minigame ends to close the sandwich over
+    public void SandwichFinish() // Call this when the sandwich minigame ends to close the sandwich over
     {
         anim.SetFloat("state",2); //Changes the animation to sw_close
     }
 
-    void SandwichReset() // Call this after the minigame to reset the animation and  deactivate all the ingredients for the next order
+    public void SandwichReset() // Call this after the minigame to reset the animation and  deactivate all the ingredients for the next order
     {
         anim.SetFloat ("state",0); //Changes the animation to sw_empty
 
@@ -50,17 +50,17 @@ public class SandwichVisualiser : MonoBehaviour
 
 
     //INGREDIENTS - use each of these to activate the required ingredient
-        void Tomato()
+    public void Tomato()
     {
         TomatoSlice.SetActive(true); // tomat
     }
 
-    void Cheese()
+    public void Cheese()
     {
         CheeseSlice.SetActive(true); // chess
     }
 
-    void Ham()
+    public void Ham()
     {
         HamSlice.SetActive(true); // hamburger
     }
