@@ -13,23 +13,28 @@ MonoBehaviour:
   m_Name: GrandmaCustomer
   m_EditorClassIdentifier: Assembly-CSharp::CustomerSO
   customerName: Rosie
-  idleExpression: {fileID: 21300000, guid: 187bd426f854c8b4dbd2b02f9c121fcc, type: 3}
-  sadExpression: {fileID: 21300000, guid: 187bd426f854c8b4dbd2b02f9c121fcc, type: 3}
-  happyExpression: {fileID: 21300000, guid: 187bd426f854c8b4dbd2b02f9c121fcc, type: 3}
+  idleExpression: {fileID: -804254597, guid: 89b214962d3208944af3eccba0342c5d, type: 3}
+  sadExpression: {fileID: -1120599100, guid: 89b214962d3208944af3eccba0342c5d, type: 3}
+  happyExpression: {fileID: -1857088309, guid: 89b214962d3208944af3eccba0342c5d, type: 3}
   customerIndex: 3
   trustLevel: 0
   serviceRequired: 5
   dailyOrders:
   - day: 1
     sandwichIngredients: 0100000002000000
+    coffeeIngredients: 
   - day: 2
     sandwichIngredients: 0100000002000000
+    coffeeIngredients: 
   - day: 3
     sandwichIngredients: 0100000002000000
+    coffeeIngredients: 
   - day: 4
     sandwichIngredients: 0100000002000000
+    coffeeIngredients: 
   - day: 5
     sandwichIngredients: 0100000002000000
+    coffeeIngredients: 
   dailyDialogue:
   - day: 1
     introDialogue: {fileID: 11400000, guid: 1b83756606c861d4e9b2c9848cfc93d2, type: 2}
