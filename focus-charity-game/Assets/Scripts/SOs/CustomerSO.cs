@@ -6,6 +6,7 @@ public class DailyOrder
 {
     public int day;
     public List<Ingredients> sandwichIngredients;
+    public List<Ingredients> coffeeIngredients;
 }
 [System.Serializable]
 public enum Ingredients
@@ -13,7 +14,10 @@ public enum Ingredients
     Cheese,
     Ham,
     Tomato,
-    Lettuce
+    Lettuce,
+    Milk,
+    Coffee,
+    Water
 }
 
 [System.Serializable]

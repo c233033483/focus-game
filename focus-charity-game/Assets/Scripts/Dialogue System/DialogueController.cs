@@ -21,7 +21,6 @@ public class DialogueController : MonoBehaviour
     [SerializeField] private TMP_Text dialogueText;
     [SerializeField] private TMP_Text nameText;
     [SerializeField] private GameObject dialogueBox;
-    [SerializeField] private Button starOrderButton;
 
     private CustomerSO currentCustomer;
     private int dayIndex;
@@ -30,7 +29,6 @@ public class DialogueController : MonoBehaviour
     private void Start()
     {
         dialogueBox.SetActive(false);
-        starOrderButton.gameObject.SetActive(false);
     }
 
     // Called by GameplayManager.cs
@@ -99,7 +97,9 @@ public class DialogueController : MonoBehaviour
         }
 
         if (dialogueAsset.unlockOrderButton)
-            starOrderButton.gameObject.SetActive(true);
+        {
+            FoodCreationButtons.Instance.SetButtonsOnStartOrder();
+        }
             
         dialogueBox.SetActive(false);
         onEnd?.Invoke();
@@ -108,10 +108,5 @@ public class DialogueController : MonoBehaviour
     public void SkipLine()
     {
         skipLineTriggered = true;
-    }
-
-    public void TurnOffStartOrderButton()
-    {
-        starOrderButton.gameObject.SetActive(false);
     }
 }
