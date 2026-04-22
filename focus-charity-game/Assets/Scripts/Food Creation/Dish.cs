@@ -14,7 +14,6 @@ public class Dish : MonoBehaviour
     public List<Ingredients> currentCoffeeIngredients;
     public List<Ingredients> currentSandwichIngredients;
     
-    public TMP_Text ingredientsText;
     public Button submitSandwichOrderButton;
     public Button submitCoffeeOrderButton;
 
@@ -42,8 +41,11 @@ public class Dish : MonoBehaviour
     {
         dishType = type;
 
-        //sandwichvisualiser
-        sandwichVisualiserScipt.SandwichStart();
+        if (dishType == DishType.Sandwich)
+        {
+            //sandwichvisualiser
+            sandwichVisualiserScipt.SandwichStart();
+        }
     }
     
 
@@ -59,8 +61,9 @@ public class Dish : MonoBehaviour
         submitCoffeeOrderButton.gameObject.SetActive(true);
         if (dishType == DishType.Sandwich) currentSandwichIngredients.Add(ingredient);
         else if (dishType == DishType.Coffee) currentCoffeeIngredients.Add(ingredient);
-        ingredientsText.text += ingredient + ", "; //placeholder for dish gameobject to be updated later
-
+        
+        print("ingredient placed: " + ingredient);
+        
         //sandwichvisuals
         if (ingredient == Ingredients.Tomato)
         {
@@ -78,17 +81,13 @@ public class Dish : MonoBehaviour
 
     public void FinishSandwichCreation()
     {
-        ingredientsText.text = "Current ingredients: ";
-
         //sandwichvisualiser
         sandwichVisualiserScipt.SandwichFinish();
-        
     }
 
     public void FinishCoffeeCreation()
     {
-        ingredientsText.text = "Current ingredients: ";
-
+        //put lid on coffee
     }
 
     public void SubmitOrder()

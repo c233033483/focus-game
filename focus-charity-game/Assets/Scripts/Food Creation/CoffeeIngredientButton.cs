@@ -10,16 +10,19 @@ public class CoffeeIngredientButton : MonoBehaviour, IClickable
         switch (ingredient)
         {
             case Ingredients.Milk:
-                coffeeCupAnimator.SetTrigger("AddMilk");
+                coffeeCupAnimator?.SetTrigger("AddMilk");
                 IngredientPlacingEventChannel.PlacingEvent(ingredient);
+                print("milk added");
                 break;
             case Ingredients.Coffee:
-                coffeeCupAnimator.SetTrigger("AddCoffee");
+                coffeeCupAnimator?.SetTrigger("AddCoffee");
                 IngredientPlacingEventChannel.PlacingEvent(ingredient);
+                print("coffee added");
                 break;
             case Ingredients.Water:
-                coffeeCupAnimator.SetTrigger("AddWater");
+                coffeeCupAnimator?.SetTrigger("AddWater");
                 IngredientPlacingEventChannel.PlacingEvent(ingredient);
+                print("water added");
                 break;
             default:
                 break;
