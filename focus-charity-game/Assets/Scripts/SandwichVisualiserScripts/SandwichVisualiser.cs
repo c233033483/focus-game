@@ -17,6 +17,9 @@ public class SandwichVisualiser : MonoBehaviour
     public GameObject HamSlice; // use "Ham" child
 
 
+    public randomsound randomsound;
+
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -53,16 +56,19 @@ public class SandwichVisualiser : MonoBehaviour
     public void Tomato()
     {
         TomatoSlice.SetActive(true); // tomat
+        randomsound.RandomAudio();
     }
 
     public void Cheese()
     {
         CheeseSlice.SetActive(true); // chess
+        randomsound.RandomAudio();
     }
 
     public void Ham()
     {
         HamSlice.SetActive(true); // hamburger
+        randomsound.RandomAudio();
     }
 
 }
