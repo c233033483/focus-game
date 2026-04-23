@@ -16,6 +16,8 @@ public class Dish : MonoBehaviour
     
     public Button submitSandwichOrderButton;
     public Button submitCoffeeOrderButton;
+    
+    public Button exitSandwichButton, exitCoffeeButton;
 
     //sandwichvisualiser
     public SandwichVisualiser sandwichVisualiserScipt;
@@ -45,6 +47,11 @@ public class Dish : MonoBehaviour
         {
             //sandwichvisualiser
             sandwichVisualiserScipt.SandwichStart();
+            exitSandwichButton.gameObject.SetActive(true);
+        }
+        else
+        {
+            exitCoffeeButton.gameObject.SetActive(true);
         }
     }
     
@@ -93,11 +100,18 @@ public class Dish : MonoBehaviour
     public void SubmitOrder()
     {
         OrderingEventChannel.OnOrderSubmitted(currentSandwichIngredients, currentCoffeeIngredients);
+        
+        ScrapOrder();
+    }
+
+    public void ScrapOrder()
+    {
         currentSandwichIngredients.Clear();
         currentCoffeeIngredients.Clear();
-
-        //sandwichvisualiser
+        
         sandwichVisualiserScipt.SandwichReset();
-
+        
+        exitSandwichButton.gameObject.SetActive(false);
+        exitCoffeeButton.gameObject.SetActive(false);
     }
 }

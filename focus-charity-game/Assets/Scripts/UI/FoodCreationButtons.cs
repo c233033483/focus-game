@@ -17,6 +17,7 @@ public class FoodCreationButtons : MonoBehaviour
 
     [SerializeField] private Button sandwichMadeButton, coffeeMadeButton, serveOrderButton;
     [SerializeField] private GameObject makeOrderButtons;
+    [SerializeField] private Button exitSandwichButton, exitCoffeeButton;
     
     public void SetButtonsOnStartOrder()
     {
@@ -25,6 +26,8 @@ public class FoodCreationButtons : MonoBehaviour
         serveOrderButton.interactable = false;
         serveOrderButton.gameObject.SetActive(true);
         
+        exitCoffeeButton.gameObject.SetActive(true);
+        exitSandwichButton.gameObject.SetActive(true);
     }
 
     public void EnableServing()
