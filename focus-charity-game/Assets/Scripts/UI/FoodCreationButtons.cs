@@ -35,9 +35,9 @@ public class FoodCreationButtons : MonoBehaviour
     public void OnOrderServed()
     {
         sandwichMadeButton.interactable = true;
-        sandwichMadeButton.interactable = true;
+        coffeeMadeButton.interactable = true;
         
-        sandwichMadeButton.gameObject.SetActive(false);
+        serveOrderButton.gameObject.SetActive(false);
         makeOrderButtons.SetActive(false);
     }
 }

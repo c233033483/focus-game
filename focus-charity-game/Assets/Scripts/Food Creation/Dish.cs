@@ -95,8 +95,6 @@ public class Dish : MonoBehaviour
         OrderingEventChannel.OnOrderSubmitted(currentSandwichIngredients, currentCoffeeIngredients);
         currentSandwichIngredients.Clear();
         currentCoffeeIngredients.Clear();
-        submitSandwichOrderButton.gameObject.SetActive(false);
-        submitCoffeeOrderButton.gameObject.SetActive(false);
 
         //sandwichvisualiser
         sandwichVisualiserScipt.SandwichReset();

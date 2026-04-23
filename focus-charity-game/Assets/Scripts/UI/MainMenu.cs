@@ -7,4 +7,9 @@ public class MainMenu : MonoBehaviour
     {
         SceneManager.LoadScene("Main Scene");
     }
+
+    public void OpenFocusWebsite()
+    {
+        Application.OpenURL("http://www.focusireland.ie");
+    }
 }

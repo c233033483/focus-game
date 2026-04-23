@@ -8,7 +8,6 @@ public class OrderingSystem : MonoBehaviour
     public static OrderingSystem Instance { get; private set; }
 
     [SerializeField] private GameObject trustPanel;
-    [SerializeField] private TMP_Text trustText;
     
     private void Awake()
     {
@@ -63,10 +62,8 @@ public class OrderingSystem : MonoBehaviour
         if (wasOrderCorrect)
         {
             IndexBookManager.Instance.IncreaseCustomerTrust(currentCustomer);
+            trustPanel.SetActive(true); //trigger animation here
         }
-        
-        //trustText.text = "Trust: " + currentCustomer.trustLevel;
-        trustPanel.SetActive(true); //trigger animation here
         
         StartCoroutine(NextCustomerRoutine(wasOrderCorrect));
     }
