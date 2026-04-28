@@ -46,21 +46,36 @@ public class InteractionRay : MonoBehaviour
             pressAction.Disable();
     }
     
-    /// <summary>
-    /// Called when the pressAction event is detected.
-    /// Looks for a clickable object with IClickable
-    /// </summary>
-    /// <param name="ctx"></param>
+    
     private void OnInteract(InputAction.CallbackContext ctx)
     {
         Vector2 mousePos = dragAction.ReadValue<Vector2>();
-
         Ray ray = mainCamera.ScreenPointToRay(mousePos);
+
         if (Physics.Raycast(ray, out RaycastHit hit, rayLength))
         {
-            ClickObject(hit.collider.gameObject);
+            GameObject hitObject = hit.collider.gameObject;
+
+            if (hitObject.TryGetComponent(out IngredientSelector selector))
+            {
+                DraggableIngredient spawned = selector.SpawnIngredient(hit.point);
+                if (spawned != null)
+                {
+                    currentlyDragging = spawned;
+                    currentlyDragging.BeginDrag(ray);
+                }
+            }
+            else if (hitObject.TryGetComponent(out IDraggable draggable))
+            {
+                currentlyDragging = draggable;
+                currentlyDragging.BeginDrag(ray);
+            }
+            else if (hitObject.TryGetComponent(out IClickable clickable))
+            {
+                clickable.Interact();
+            }
         }
-        
+
         Debug.DrawRay(ray.origin, ray.direction * rayLength, Color.red);
     }
 
@@ -69,6 +84,7 @@ public class InteractionRay : MonoBehaviour
         OnDragEnd();
     }
 
+    /*
     private void ClickObject(GameObject objectToInteractWith)
     {
         if (objectToInteractWith.TryGetComponent(out IClickable clickableObject))
@@ -100,6 +116,7 @@ public class InteractionRay : MonoBehaviour
             }
         }
     }
+    */
     
     private void Update()
     {
