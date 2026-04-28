@@ -51,15 +51,13 @@ public class DialogueController : MonoBehaviour
         
         StartCoroutine(RunDialogue(asset, () =>
         {
-            if (currentCustomer.trustLevel >= 4)
+            if (wasOrderCorrect && currentCustomer.hintsIndex < currentCustomer.hints.Length)
             {
-                PhoneBookManager.Instance.SetCustomer(currentCustomer);
-                IndexBookManager.Instance.EnableHelp(currentCustomer);
-                StartHelpDialogue();
+                StartCoroutine(RunDialogue(currentCustomer.hints[currentCustomer.hintsIndex++], CheckTrust));
             }
             else
             {
-                GameplayManager.Instance.NextCustomer();
+                CheckTrust();
             }
         }));
     }
@@ -75,7 +73,21 @@ public class DialogueController : MonoBehaviour
         DailyDialogue todaysDialogue = currentCustomer.endgameDialogue;
         DialogueAssetSO asset = wasServiceCorrect ? 
             todaysDialogue.correctOrderDialogue : todaysDialogue.incorrectOrderDialogue;
-        StartCoroutine(RunDialogue(asset, () => GameplayManager.Instance.NextCustomer()));
+        GameplayManager.Instance.NextCustomer();
+    }
+
+    private void CheckTrust()
+    {
+        if (currentCustomer.trustLevel >= 4)
+        {
+            PhoneBookManager.Instance.SetCustomer(currentCustomer);
+            IndexBookManager.Instance.EnableHelp(currentCustomer);
+            StartHelpDialogue();
+        }
+        else
+        {
+            GameplayManager.Instance.NextCustomer();
+        }
     }
 
     private DailyDialogue GetTodaysDialogue(CustomerSO customer)

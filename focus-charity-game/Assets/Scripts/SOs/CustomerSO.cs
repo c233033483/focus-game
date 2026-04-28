@@ -45,6 +45,8 @@ public class CustomerSO : ScriptableObject
     public List<DailyOrder> dailyOrders;
     public List<DailyDialogue> dailyDialogue;
 
+    public DialogueAssetSO[] hints;
+    public int hintsIndex;
     public DailyDialogue endgameDialogue;
     
     public DailyOrder GetOrderForToday(int day)

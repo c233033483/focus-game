@@ -22,14 +22,19 @@ MonoBehaviour:
   dailyOrders:
   - day: 1
     sandwichIngredients: 0100000000000000
+    coffeeIngredients: 
   - day: 2
     sandwichIngredients: 0100000000000000
+    coffeeIngredients: 
   - day: 3
     sandwichIngredients: 0100000000000000
+    coffeeIngredients: 
   - day: 4
     sandwichIngredients: 0100000000000000
+    coffeeIngredients: 
   - day: 1
     sandwichIngredients: 0100000000000000
+    coffeeIngredients: 
   dailyDialogue:
   - day: 1
     introDialogue: {fileID: 11400000, guid: 435bb8c6f37f3284aa00c1c3c1ecda17, type: 2}
@@ -51,6 +56,11 @@ MonoBehaviour:
     introDialogue: {fileID: 11400000, guid: 3a25686a64fd38f4888631b81a74871d, type: 2}
     correctOrderDialogue: {fileID: 11400000, guid: 5ff8a661da49dae40a5cd5cccce4553e, type: 2}
     incorrectOrderDialogue: {fileID: 11400000, guid: 0c655de2a8b741247a5a21962fe34bcd, type: 2}
+  hints:
+  - {fileID: 11400000, guid: daead184db2f1a84da2bcf3fb64391d8, type: 2}
+  - {fileID: 11400000, guid: 5300713680cf53642bd9577018e09def, type: 2}
+  - {fileID: 11400000, guid: d208728b0697a494ca2f203362cba530, type: 2}
+  hintsIndex: 0
   endgameDialogue:
     day: 0
     introDialogue: {fileID: 11400000, guid: 664f98e7ff1d0414990b6641067d37ac, type: 2}
