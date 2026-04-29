@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Child_Day4_OutroBad
   m_EditorClassIdentifier: Assembly-CSharp::DialogueAssetSO
   dialogue:
-  - 'Oh... '
-  - This is not what I wanted
+  - Ew
+  - Tastes weird...
   unlockOrderButton: 0

@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DialogueAssetSO
   dialogue:
   - "Tastes weird...\t"
-  - Anyways, thanks
+  - Anyways, thanks.
   unlockOrderButton: 0

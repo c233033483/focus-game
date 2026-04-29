@@ -13,6 +13,5 @@ MonoBehaviour:
   m_Name: Child_Day4_OutroGood
   m_EditorClassIdentifier: Assembly-CSharp::DialogueAssetSO
   dialogue:
-  - Delicious!
-  - 'I''ve missed this taste... my Mam has to work so much  '
+  - This is nice, thanks.
   unlockOrderButton: 0
