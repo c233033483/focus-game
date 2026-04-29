@@ -8,6 +8,11 @@ public class OrderingSystem : MonoBehaviour
     public static OrderingSystem Instance { get; private set; }
 
     [SerializeField] private GameObject trustPanel;
+
+    public randomsound randomsound; //Audio player
+
+    public ParticleSystem heart; //heart particle
+    public ParticleSystem bleh; //bleh particle
     
     private void Awake()
     {
@@ -63,6 +68,15 @@ public class OrderingSystem : MonoBehaviour
         {
             IndexBookManager.Instance.IncreaseCustomerTrust(currentCustomer);
             trustPanel.SetActive(true); //trigger animation here
+
+            //Audio
+            randomsound.SelectedAudio(0);
+            heart.Play();
+        }
+        else
+        {
+            randomsound.SelectedAudio(1);
+            bleh.Play();
         }
         
         StartCoroutine(NextCustomerRoutine(wasOrderCorrect));
