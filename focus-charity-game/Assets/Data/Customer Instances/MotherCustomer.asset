@@ -60,7 +60,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: daead184db2f1a84da2bcf3fb64391d8, type: 2}
   - {fileID: 11400000, guid: 5300713680cf53642bd9577018e09def, type: 2}
   - {fileID: 11400000, guid: d208728b0697a494ca2f203362cba530, type: 2}
-  hintsIndex: 1
+  hintsIndex: 0
   endgameDialogue:
     day: 0
     introDialogue: {fileID: 11400000, guid: 664f98e7ff1d0414990b6641067d37ac, type: 2}
