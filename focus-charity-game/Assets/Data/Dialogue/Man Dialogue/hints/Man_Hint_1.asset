@@ -13,5 +13,7 @@ MonoBehaviour:
   m_Name: Man_Hint_1
   m_EditorClassIdentifier: Assembly-CSharp::DialogueAssetSO
   dialogue:
-  - Hint 5
+  - 'Hint 1
+
+'
   unlockOrderButton: 0
