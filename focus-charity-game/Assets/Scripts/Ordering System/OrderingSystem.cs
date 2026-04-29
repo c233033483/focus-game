@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -9,7 +8,6 @@ public class OrderingSystem : MonoBehaviour
     public static OrderingSystem Instance { get; private set; }
 
     [SerializeField] private GameObject trustPanel;
-    [SerializeField] private TMP_Text trustText;
     
     private void Awake()
     {
@@ -56,18 +54,16 @@ public class OrderingSystem : MonoBehaviour
     ///     When the order is received, the trust is increased here.
     ///     The trust UI is handled here, may need to be moved when it's not just text.
     /// </summary>
-    /// <param name="dishProvided"></param>
-    private void ReceiveOrder(List<Ingredients> dishProvided)
+    private void ReceiveOrder(List<Ingredients> sandwichServed, List<Ingredients> coffeeServed)
     {
-        bool wasOrderCorrect = CheckOrder(currentOrder.sandwichIngredients, dishProvided);
+        bool wasOrderCorrect = (CheckOrder(currentOrder.sandwichIngredients, sandwichServed) && 
+                                CheckOrder(currentOrder.coffeeIngredients, coffeeServed));
 
         if (wasOrderCorrect)
         {
             IndexBookManager.Instance.IncreaseCustomerTrust(currentCustomer);
+            trustPanel.SetActive(true); //trigger animation here
         }
-        
-        //trustText.text = "Trust: " + currentCustomer.trustLevel;
-        trustPanel.SetActive(true); //trigger animation here
         
         StartCoroutine(NextCustomerRoutine(wasOrderCorrect));
     }

@@ -21,7 +21,6 @@ public class DialogueController : MonoBehaviour
     [SerializeField] private TMP_Text dialogueText;
     [SerializeField] private TMP_Text nameText;
     [SerializeField] private GameObject dialogueBox;
-    [SerializeField] private Button starOrderButton;
 
     private CustomerSO currentCustomer;
     private int dayIndex;
@@ -30,7 +29,6 @@ public class DialogueController : MonoBehaviour
     private void Start()
     {
         dialogueBox.SetActive(false);
-        starOrderButton.gameObject.SetActive(false);
     }
 
     // Called by GameplayManager.cs
@@ -53,15 +51,13 @@ public class DialogueController : MonoBehaviour
         
         StartCoroutine(RunDialogue(asset, () =>
         {
-            if (currentCustomer.trustLevel >= 4)
+            if (wasOrderCorrect && currentCustomer.hintsIndex < currentCustomer.hints.Length)
             {
-                PhoneBookManager.Instance.SetCustomer(currentCustomer);
-                IndexBookManager.Instance.EnableHelp(currentCustomer);
-                StartHelpDialogue();
+                StartCoroutine(RunDialogue(currentCustomer.hints[currentCustomer.hintsIndex++], CheckTrust));
             }
             else
             {
-                GameplayManager.Instance.NextCustomer();
+                CheckTrust();
             }
         }));
     }
@@ -77,7 +73,21 @@ public class DialogueController : MonoBehaviour
         DailyDialogue todaysDialogue = currentCustomer.endgameDialogue;
         DialogueAssetSO asset = wasServiceCorrect ? 
             todaysDialogue.correctOrderDialogue : todaysDialogue.incorrectOrderDialogue;
-        StartCoroutine(RunDialogue(asset, () => GameplayManager.Instance.NextCustomer()));
+        GameplayManager.Instance.NextCustomer();
+    }
+
+    private void CheckTrust()
+    {
+        if (currentCustomer.trustLevel >= 4)
+        {
+            PhoneBookManager.Instance.SetCustomer(currentCustomer);
+            IndexBookManager.Instance.EnableHelp(currentCustomer);
+            StartHelpDialogue();
+        }
+        else
+        {
+            GameplayManager.Instance.NextCustomer();
+        }
     }
 
     private DailyDialogue GetTodaysDialogue(CustomerSO customer)
@@ -99,7 +109,9 @@ public class DialogueController : MonoBehaviour
         }
 
         if (dialogueAsset.unlockOrderButton)
-            starOrderButton.gameObject.SetActive(true);
+        {
+            FoodCreationButtons.Instance.SetButtonsOnStartOrder();
+        }
             
         dialogueBox.SetActive(false);
         onEnd?.Invoke();
@@ -108,10 +120,5 @@ public class DialogueController : MonoBehaviour
     public void SkipLine()
     {
         skipLineTriggered = true;
-    }
-
-    public void TurnOffStartOrderButton()
-    {
-        starOrderButton.gameObject.SetActive(false);
     }
 }

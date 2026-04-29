@@ -13,23 +13,28 @@ MonoBehaviour:
   m_Name: ManCustomer
   m_EditorClassIdentifier: Assembly-CSharp::CustomerSO
   customerName: Paul
-  idleExpression: {fileID: -1962781604, guid: 2013677b078161d4f965848f20f011ae, type: 3}
-  sadExpression: {fileID: -1962781604, guid: 2013677b078161d4f965848f20f011ae, type: 3}
-  happyExpression: {fileID: -1962781604, guid: 2013677b078161d4f965848f20f011ae, type: 3}
+  idleExpression: {fileID: 154358796, guid: 665e167e5ff70b448bb9ce9d96cf3710, type: 3}
+  sadExpression: {fileID: 940273397, guid: 665e167e5ff70b448bb9ce9d96cf3710, type: 3}
+  happyExpression: {fileID: 1995001118, guid: 665e167e5ff70b448bb9ce9d96cf3710, type: 3}
   customerIndex: 2
   trustLevel: 0
   serviceRequired: 3
   dailyOrders:
   - day: 1
     sandwichIngredients: 010000000000000002000000
+    coffeeIngredients: 0500000004000000
   - day: 2
     sandwichIngredients: 010000000000000002000000
+    coffeeIngredients: 
   - day: 3
     sandwichIngredients: 010000000000000002000000
+    coffeeIngredients: 
   - day: 4
     sandwichIngredients: 010000000000000002000000
+    coffeeIngredients: 
   - day: 5
     sandwichIngredients: 010000000000000002000000
+    coffeeIngredients: 
   dailyDialogue:
   - day: 1
     introDialogue: {fileID: 11400000, guid: ae16027d4dd20394881782f8d656aec4, type: 2}
@@ -51,6 +56,11 @@ MonoBehaviour:
     introDialogue: {fileID: 11400000, guid: 73d4ef7d305e3304ea60dcba1c23b046, type: 2}
     correctOrderDialogue: {fileID: 11400000, guid: b836c6d8525180647a56d40e63a7f1fe, type: 2}
     incorrectOrderDialogue: {fileID: 11400000, guid: 30fd1f1e79011a74790ad0ff4a1e8665, type: 2}
+  hints:
+  - {fileID: 11400000, guid: 3e223280bda352b488b38cb05b60c191, type: 2}
+  - {fileID: 11400000, guid: 4f39943955a49df41a57d5280d80ce64, type: 2}
+  - {fileID: 11400000, guid: 98b1add0b6ecab04385bf7e9ee0afc6c, type: 2}
+  hintsIndex: 0
   endgameDialogue:
     day: 0
     introDialogue: {fileID: 11400000, guid: 8e7f803be24c89e409e3b32448348658, type: 2}

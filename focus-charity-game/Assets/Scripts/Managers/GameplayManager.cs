@@ -40,9 +40,15 @@ public class GameplayManager : MonoBehaviour
 
     public GameObject trustPanel;
     
+    private bool gameStarted = false;
+    
     private int customersHelped;
     [SerializeField] private GameObject endGamePanelGood;
     [SerializeField] private GameObject endGamePanelBad;
+    
+    public HideUI hideUI;
+
+    public GameObject tutorialPanel;
 
     private void Start()
     {
@@ -54,10 +60,20 @@ public class GameplayManager : MonoBehaviour
         dayText.text = "Day 1";
     }
     
-    private void DayStart()
+    public void DayStart()
     {
-        customerIndex = 0;
-        NextCustomer();
+        if (!gameStarted)
+        {
+            gameStarted = true;
+            hideUI.HideAllUI();
+            tutorialPanel.SetActive(true);
+            ClearCustomers();
+        }
+        else
+        { 
+            customerIndex = 0;
+            NextCustomer();
+        }
     }
 
     public void NextCustomer()

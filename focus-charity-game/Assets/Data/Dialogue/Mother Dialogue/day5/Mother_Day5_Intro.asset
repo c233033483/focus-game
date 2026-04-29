@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Mother_Day5_Intro
   m_EditorClassIdentifier: Assembly-CSharp::DialogueAssetSO
   dialogue:
-  - Good afternoon.
-  - Can I have a ham and cheese sandwich please.
-  - And can you make it quick? I'm in a rush.
+  - "Hi there.\t"
+  - "Can I get a coffee with water and milk please?\t"
+  - I'll also get a sanwich with everything on it, thanks.
   unlockOrderButton: 1

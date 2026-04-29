@@ -14,5 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DialogueAssetSO
   dialogue:
   - Delicious!
-  - 'I''ve missed this taste... my Mam has to work so much  '
-  unlockOrderButton: 0
+  unlockOrderButton: 1

@@ -13,7 +13,5 @@ MonoBehaviour:
   m_Name: Mother_Day3_OutroGood
   m_EditorClassIdentifier: Assembly-CSharp::DialogueAssetSO
   dialogue:
-  - Thanks so much.
-  - I'm so tired from work these days that I don't have time or energy to cook...
-  - Bye.
+  - "Thanks for making that.\t"
   unlockOrderButton: 0

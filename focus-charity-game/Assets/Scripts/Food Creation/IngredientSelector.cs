@@ -1,12 +1,24 @@
 using UnityEngine;
 
-public class IngredientSelector : MonoBehaviour, IClickable
+public class IngredientSelector : MonoBehaviour
 {
     [SerializeField] private GameObject ingredient2D;
-    [SerializeField] private GameObject spawnPoint;
 
     private bool ingredientActive; //can an ingredient object be spawned?
     
+    public DraggableIngredient SpawnIngredient(Vector3 spawnPosition)
+    {
+        if (ingredientActive) return null;
+
+        GameObject newIngredient = Instantiate(ingredient2D, spawnPosition, Quaternion.identity);
+        DraggableIngredient ingredient = newIngredient.GetComponent<DraggableIngredient>();
+        ingredient.OnIngredientDestroyed += DeactivateIngredient;
+        ingredientActive = true;
+        return ingredient;
+    }
+    
+    
+    /* Removed to enable dragging from the bowl.
     /// <summary>
     /// This method is called when the player clicks or presses on an ingredient object.
     /// Its purpose is to activate the game object of the ingredient, which implements IDraggable
@@ -20,7 +32,7 @@ public class IngredientSelector : MonoBehaviour, IClickable
         DraggableIngredient ingredient = newIngredient.GetComponent<DraggableIngredient>();
         ingredient.OnIngredientDestroyed += DeactivateIngredient;
         ingredientActive = true;
-    }
+    }*/
 
     /// <summary>
     /// Is called when the current instance of the ingredient is destroyed so a new ingredient can be spawned

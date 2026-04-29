@@ -13,7 +13,6 @@ MonoBehaviour:
   m_Name: Child_Day4_Intro
   m_EditorClassIdentifier: Assembly-CSharp::DialogueAssetSO
   dialogue:
-  - Hello!
-  - I would like to make an order.
-  - Can I have a cheese sandwich please?
+  - Hi again!
+  - Can I have a sandwich with cheese and tomatoes please?
   unlockOrderButton: 1
