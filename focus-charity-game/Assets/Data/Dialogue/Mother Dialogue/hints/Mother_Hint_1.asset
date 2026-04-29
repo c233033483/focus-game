@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: Mother_Hint_1
   m_EditorClassIdentifier: Assembly-CSharp::DialogueAssetSO
   dialogue:
-  - Hint 5
+  - I'm so tired these days.
+  - I don't have the time or energy to cook for myself.
   unlockOrderButton: 0

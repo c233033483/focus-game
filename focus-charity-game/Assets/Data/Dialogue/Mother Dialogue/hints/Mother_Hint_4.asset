@@ -13,5 +13,7 @@ MonoBehaviour:
   m_Name: Mother_Hint_4
   m_EditorClassIdentifier: Assembly-CSharp::DialogueAssetSO
   dialogue:
-  - Hint 4
+  - I've been running around for the whole day
+  - I'm trying to find accommodation for me and my son.
+  - I didn't even get to have breakfast.
   unlockOrderButton: 0

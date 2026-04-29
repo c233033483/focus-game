@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: Child_Hint_5
   m_EditorClassIdentifier: Assembly-CSharp::DialogueAssetSO
   dialogue:
-  - Hint 5
+  - I keep feeling sad...
+  - 'I don''t know what to do. Can you help? '
   unlockOrderButton: 0

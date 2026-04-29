@@ -13,7 +13,6 @@ MonoBehaviour:
   m_Name: Child_Hint_2
   m_EditorClassIdentifier: Assembly-CSharp::DialogueAssetSO
   dialogue:
-  - 'Hint 2
-
-'
+  - 'I wish I could bring this home and share it with my Mam '
+  - We don't have a microwave though...
   unlockOrderButton: 0

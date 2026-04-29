@@ -22,7 +22,7 @@ MonoBehaviour:
   dailyOrders:
   - day: 1
     sandwichIngredients: 010000000000000002000000
-    coffeeIngredients: 
+    coffeeIngredients: 0500000004000000
   - day: 2
     sandwichIngredients: 010000000000000002000000
     coffeeIngredients: 

@@ -13,5 +13,7 @@ MonoBehaviour:
   m_Name: Child_Hint_3
   m_EditorClassIdentifier: Assembly-CSharp::DialogueAssetSO
   dialogue:
-  - Hint 3
+  - 'This reminds me of home. '
+  - My Mam said we were evicted...
+  - I'm so sad we can't go home again...
   unlockOrderButton: 0

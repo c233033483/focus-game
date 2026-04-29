@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Child_Hint_1
   m_EditorClassIdentifier: Assembly-CSharp::DialogueAssetSO
   dialogue:
-  - Hint 1
+  - I've missed this taste... my Mam has to work so much
   unlockOrderButton: 0

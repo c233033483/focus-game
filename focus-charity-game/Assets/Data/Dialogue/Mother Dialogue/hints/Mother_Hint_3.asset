@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: Mother_Hint_3
   m_EditorClassIdentifier: Assembly-CSharp::DialogueAssetSO
   dialogue:
-  - Hint 3
+  - I need the energy boost
+  - I have to clean up our hotel room.
   unlockOrderButton: 0

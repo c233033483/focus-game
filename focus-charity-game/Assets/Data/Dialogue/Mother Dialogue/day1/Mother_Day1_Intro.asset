@@ -15,5 +15,4 @@ MonoBehaviour:
   dialogue:
   - Good afternoon.
   - Can I have a ham and cheese sandwich please.
-  - And can you make it quick? I'm in a rush.
   unlockOrderButton: 1

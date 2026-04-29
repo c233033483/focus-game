@@ -13,7 +13,5 @@ MonoBehaviour:
   m_Name: Mother_Hint_2
   m_EditorClassIdentifier: Assembly-CSharp::DialogueAssetSO
   dialogue:
-  - 'Hint 2
-
-'
+  - Hopefully I'll get a moment to rest before my son gets back from school.
   unlockOrderButton: 0

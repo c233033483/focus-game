@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: Child_Hint_4
   m_EditorClassIdentifier: Assembly-CSharp::DialogueAssetSO
   dialogue:
-  - Hint 4
+  - Mam is trying to find us a new home.
+  - I feel left out at school...
   unlockOrderButton: 0

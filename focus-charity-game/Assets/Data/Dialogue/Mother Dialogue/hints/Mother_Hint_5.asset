@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: Mother_Hint_5
   m_EditorClassIdentifier: Assembly-CSharp::DialogueAssetSO
   dialogue:
-  - Hint 1
+  - 'Hopefully we can cook for ourselves when we get a new place. '
+  - I was wondering if you would be able to help me?
   unlockOrderButton: 0
