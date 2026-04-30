@@ -50,6 +50,8 @@ public class GameplayManager : MonoBehaviour
 
     public GameObject tutorialPanel;
 
+    public randomsound chimes; //AUDIO
+
     private void Start()
     {
         endGamePanelBad.SetActive(false);
@@ -105,6 +107,9 @@ public class GameplayManager : MonoBehaviour
         OrderingSystem.Instance.ShowOrder(dayIndex, currentCustomer);
         DialogueController.Instance.StartIntroDialogue(currentCustomer, dayIndex);
         customerIndex++;
+
+        chimes.RandomAudio();
+        
     }
 
     public void ClearCustomers()

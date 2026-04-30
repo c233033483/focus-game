@@ -10,6 +10,7 @@ public class OrderingSystem : MonoBehaviour
     [SerializeField] private GameObject trustPanel;
 
     public randomsound randomsound; //Audio player
+    public music_functions music_functions; // Music player
 
     public ParticleSystem heart; //heart particle
     public ParticleSystem bleh; //bleh particle
@@ -72,11 +73,13 @@ public class OrderingSystem : MonoBehaviour
             //Audio
             randomsound.SelectedAudio(0);
             heart.Play();
+            music_functions.MusicUp();
         }
         else
         {
             randomsound.SelectedAudio(1);
             bleh.Play();
+            music_functions.MusicDown();
         }
         
         StartCoroutine(NextCustomerRoutine(wasOrderCorrect));

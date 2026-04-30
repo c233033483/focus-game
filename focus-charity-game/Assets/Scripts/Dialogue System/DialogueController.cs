@@ -22,6 +22,7 @@ public class DialogueController : MonoBehaviour
     [SerializeField] private TMP_Text nameText;
     [SerializeField] private GameObject dialogueBox;
 
+
     private CustomerSO currentCustomer;
     private int dayIndex;
     private bool skipLineTriggered;
