@@ -14,6 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DialogueAssetSO
   dialogue:
   - Hi.
-  - I'll have a sandwich.
-  - I'll have one of everything.
+  - Can i just get a coffee with water please?
   unlockOrderButton: 1

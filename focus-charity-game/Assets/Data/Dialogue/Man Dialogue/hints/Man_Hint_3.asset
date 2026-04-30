@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Man_Hint_3
   m_EditorClassIdentifier: Assembly-CSharp::DialogueAssetSO
   dialogue:
-  - Hint 3
+  - One day I hope I'll have my own home.
   unlockOrderButton: 0

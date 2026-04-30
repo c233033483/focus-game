@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Man_Day4_OutroBad
   m_EditorClassIdentifier: Assembly-CSharp::DialogueAssetSO
   dialogue:
-  - Oh, this order is wrong.
-  - But thanks.
+  - This isn't right.
+  - Thanks anyways.
   unlockOrderButton: 0

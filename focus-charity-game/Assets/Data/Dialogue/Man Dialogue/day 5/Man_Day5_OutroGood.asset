@@ -13,6 +13,5 @@ MonoBehaviour:
   m_Name: Man_Day5_OutroGood
   m_EditorClassIdentifier: Assembly-CSharp::DialogueAssetSO
   dialogue:
-  - Thanks, here, this is all I have.
-  - People on the streets have been generous today.
+  - Perfect, thanks.
   unlockOrderButton: 0
