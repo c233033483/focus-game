@@ -13,7 +13,5 @@ MonoBehaviour:
   m_Name: Man_Hint_2
   m_EditorClassIdentifier: Assembly-CSharp::DialogueAssetSO
   dialogue:
-  - 'Hint 2
-
-'
+  - It's nice to get a warm meal.
   unlockOrderButton: 0

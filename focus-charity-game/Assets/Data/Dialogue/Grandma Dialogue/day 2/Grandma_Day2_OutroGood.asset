@@ -13,8 +13,5 @@ MonoBehaviour:
   m_Name: Grandma_Day2_OutroGood
   m_EditorClassIdentifier: Assembly-CSharp::DialogueAssetSO
   dialogue:
-  - "Oh wow, this is just what I needed!\t"
-  - It has been so hard to afford good food lately that I forgot how good it tastes.
-  - It looks like prices are going up every day!
-  - I hope I'll be able to come here again soon...
+  - Delicious!
   unlockOrderButton: 0

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Man_Day5_Intro
   m_EditorClassIdentifier: Assembly-CSharp::DialogueAssetSO
   dialogue:
-  - Hi.
-  - I'll have a sandwich.
-  - I'll have one of everything.
+  - Hi there.
+  - I'll have a sandwich pleased with cheese and tomatoes.
+  - And a coffee with milk as well please.
   unlockOrderButton: 1

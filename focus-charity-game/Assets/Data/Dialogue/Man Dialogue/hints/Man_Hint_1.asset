@@ -13,7 +13,5 @@ MonoBehaviour:
   m_Name: Man_Hint_1
   m_EditorClassIdentifier: Assembly-CSharp::DialogueAssetSO
   dialogue:
-  - 'Hint 1
-
-'
+  - I got more cash than usual today on the streets.
   unlockOrderButton: 0

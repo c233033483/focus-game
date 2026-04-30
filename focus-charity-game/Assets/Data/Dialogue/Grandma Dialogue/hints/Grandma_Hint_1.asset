@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: Grandma_Hint_1
   m_EditorClassIdentifier: Assembly-CSharp::DialogueAssetSO
   dialogue:
-  - Hint 1
+  - Prices have gone up so much recently.
+  - It's been hard to afford nice food...
   unlockOrderButton: 0

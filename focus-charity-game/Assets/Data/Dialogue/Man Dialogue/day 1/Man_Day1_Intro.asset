@@ -15,5 +15,4 @@ MonoBehaviour:
   dialogue:
   - Hi.
   - I'll have a sandwich with one of everything.
-  - And a coffee with milk please.
   unlockOrderButton: 1
