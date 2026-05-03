@@ -77,6 +77,8 @@ public class OrderingSystem : MonoBehaviour
         }
         else
         {
+            currentCustomer.DayFailed();
+            
             randomsound.SelectedAudio(1);
             bleh.Play();
             music_functions.MusicDown();

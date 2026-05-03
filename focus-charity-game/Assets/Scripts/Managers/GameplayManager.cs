@@ -42,9 +42,10 @@ public class GameplayManager : MonoBehaviour
     
     private bool gameStarted = false;
     
-    private int customersHelped;
+    public int customersHelped;
     [SerializeField] private GameObject endGamePanelGood;
     [SerializeField] private GameObject endGamePanelBad;
+    [SerializeField] private GameObject endGamePanelFailed;
     
     public HideUI hideUI;
 
@@ -86,7 +87,18 @@ public class GameplayManager : MonoBehaviour
         // Find the next customer for the current day
         if (customerIndex < currentQueue.customersInOrder.Count)
         {
+            if (!currentQueue.customersInOrder[customerIndex].activeCustomer)
+            {
+                customerIndex++;
+                NextCustomer();
+                return;
+            }
             StartCoroutine(NextCustomerRoutine(currentQueue));
+        }
+        else if (AllCustomersFailed())
+        {
+            endGamePanelFailed.SetActive(true);
+            return;
         }
         else
         {
@@ -145,5 +157,13 @@ public class GameplayManager : MonoBehaviour
             dayText.text = $"Day {dayIndex}";
             dayStartPanel.SetActive(true);
         }
+    }
+    
+    private bool AllCustomersFailed()
+    {
+        foreach (var queue in dailyQueues)
+        foreach (var customer in queue.customersInOrder)
+            if (customer.activeCustomer) return false;
+        return true;
     }
 }

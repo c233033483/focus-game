@@ -18,6 +18,7 @@ MonoBehaviour:
   happyExpression: {fileID: 349941112, guid: 4ae6f5656d248aa41b1e3e4f3de70a93, type: 3}
   customerIndex: 1
   trustLevel: 0
+  trustGoal: 3
   serviceRequired: 0
   dailyOrders:
   - day: 1
@@ -66,3 +67,6 @@ MonoBehaviour:
     introDialogue: {fileID: 11400000, guid: 664f98e7ff1d0414990b6641067d37ac, type: 2}
     correctOrderDialogue: {fileID: 11400000, guid: 8c317e4692862574ba7684e3b8b2e678, type: 2}
     incorrectOrderDialogue: {fileID: 11400000, guid: cfa8de6e9639e514b8fc37b0b58bdd47, type: 2}
+  failureDialogue: {fileID: 11400000, guid: 75761fa578530d34aa1971f9cdf81f57, type: 2}
+  activeCustomer: 0
+  failedDays: 0

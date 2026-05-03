@@ -40,6 +40,7 @@ public class CustomerSO : ScriptableObject
     public int customerIndex;
 
     public int trustLevel;
+    public int trustGoal;
     public Services serviceRequired;
     
     public List<DailyOrder> dailyOrders;
@@ -48,6 +49,10 @@ public class CustomerSO : ScriptableObject
     public DialogueAssetSO[] hints;
     public int hintsIndex;
     public DailyDialogue endgameDialogue;
+    public DialogueAssetSO failureDialogue;
+
+    public bool activeCustomer; //is the customer still active? ie hasn't been helped yet, the player hasn't missed two orders yet.
+    public int failedDays;
     
     public DailyOrder GetOrderForToday(int day)
     {
@@ -57,5 +62,12 @@ public class CustomerSO : ScriptableObject
     public void IncreaseTrust(int amount)
     {
         trustLevel += amount;
+    }
+    
+    public void DayFailed()
+    {
+        failedDays++;
+        if (failedDays >= 2)
+            activeCustomer = false;
     }
 }

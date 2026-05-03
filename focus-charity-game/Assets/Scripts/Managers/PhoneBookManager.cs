@@ -40,6 +40,8 @@ public class PhoneBookManager : MonoBehaviour
         }
         
         Debug.Log(service + " selected for " + currentCustomer.name);
+        
+        GameplayManager.Instance.customersHelped++;
     }
 
     private void ResetVariables()

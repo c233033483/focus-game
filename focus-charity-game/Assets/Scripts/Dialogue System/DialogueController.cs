@@ -79,11 +79,18 @@ public class DialogueController : MonoBehaviour
 
     private void CheckTrust()
     {
-        if (currentCustomer.trustLevel >= 4)
+        if (currentCustomer.trustLevel >= currentCustomer.trustGoal)
         {
             PhoneBookManager.Instance.SetCustomer(currentCustomer);
             IndexBookManager.Instance.EnableHelp(currentCustomer);
             StartHelpDialogue();
+        }
+        else if (currentCustomer.failedDays >= 2)
+        {
+            StartCoroutine(RunDialogue(currentCustomer.failureDialogue, () =>
+            {
+                GameplayManager.Instance.NextCustomer();
+            }));
         }
         else
         {

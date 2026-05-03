@@ -37,6 +37,9 @@ public class IndexBookManager : MonoBehaviour
     {
         Debug.Log($"Increasing trust for {customer.customerName} at index {customer.customerIndex}");
         customer.IncreaseTrust(1);
+        if (customer.trustLevel >= 3)
+            customer.activeCustomer = false;
+        
         var slot = indexSlots[customer.customerIndex].transform.Find("Trust Level Text").GetComponent<TMP_Text>();
         slot.text = "Trust: " + customer.trustLevel + "/4";
     }
