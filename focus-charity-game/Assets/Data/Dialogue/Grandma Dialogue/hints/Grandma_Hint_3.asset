@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: Grandma_Hint_3
   m_EditorClassIdentifier: Assembly-CSharp::DialogueAssetSO
   dialogue:
-  - Hint 3
+  - I've been struggling recently with money.
+  - I'm scared I won't be able to stay in my home much longer...
   unlockOrderButton: 0

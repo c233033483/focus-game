@@ -13,5 +13,7 @@ MonoBehaviour:
   m_Name: Mother_Hint_2
   m_EditorClassIdentifier: Assembly-CSharp::DialogueAssetSO
   dialogue:
-  - Hopefully I'll get a moment to rest before my son gets back from school.
+  - I've been running around for the whole day.
+  - I'm trying to find accommodation for me and my son.
+  - I didn't even get to have breakfast this morning...
   unlockOrderButton: 0

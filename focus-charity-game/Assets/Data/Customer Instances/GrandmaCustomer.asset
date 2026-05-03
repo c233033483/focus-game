@@ -68,5 +68,5 @@ MonoBehaviour:
     correctOrderDialogue: {fileID: 11400000, guid: 7dfec04bbcc75d543bac46a4537fa95f, type: 2}
     incorrectOrderDialogue: {fileID: 11400000, guid: a1bf4f6ab031a12408285d5ff4ed8b78, type: 2}
   failureDialogue: {fileID: 11400000, guid: 173f2b221aed04a45a45602c5953e979, type: 2}
-  activeCustomer: 0
+  activeCustomer: 1
   failedDays: 0

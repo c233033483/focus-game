@@ -13,7 +13,6 @@ MonoBehaviour:
   m_Name: Grandma_Hint_2
   m_EditorClassIdentifier: Assembly-CSharp::DialogueAssetSO
   dialogue:
-  - 'Hint 2
-
-'
+  - This will take my mind off of things for now.
+  - 'It''s '
   unlockOrderButton: 0
