@@ -25,11 +25,11 @@ MonoBehaviour:
     sandwichIngredients: 0100000000000000
     coffeeIngredients: 
   - day: 2
-    sandwichIngredients: 00000000
-    coffeeIngredients: 
-  - day: 3
     sandwichIngredients: 
-    coffeeIngredients: 0500000004000000
+    coffeeIngredients: 05000000
+  - day: 3
+    sandwichIngredients: 00000000
+    coffeeIngredients: 05000000
   - day: 4
     sandwichIngredients: 0100000000000000
     coffeeIngredients: 06000000
@@ -68,5 +68,5 @@ MonoBehaviour:
     correctOrderDialogue: {fileID: 11400000, guid: 8c317e4692862574ba7684e3b8b2e678, type: 2}
     incorrectOrderDialogue: {fileID: 11400000, guid: cfa8de6e9639e514b8fc37b0b58bdd47, type: 2}
   failureDialogue: {fileID: 11400000, guid: 75761fa578530d34aa1971f9cdf81f57, type: 2}
-  activeCustomer: 0
+  activeCustomer: 1
   failedDays: 0

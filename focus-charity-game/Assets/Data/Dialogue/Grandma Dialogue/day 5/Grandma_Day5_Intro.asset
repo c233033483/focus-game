@@ -13,8 +13,7 @@ MonoBehaviour:
   m_Name: Grandma_Day5_Intro
   m_EditorClassIdentifier: Assembly-CSharp::DialogueAssetSO
   dialogue:
-  - Oh, hello there, love!
-  - The weather is so unusually nice today,
-  - "So I decided to treat myself to a nice sandwich.\t"
-  - Can I have a ham and tomato sandwich, please.
+  - Hi, how are you, dear.
+  - Can I order a ham and tomato sandwich please.
+  - And a coffee with water with that, thanks.
   unlockOrderButton: 1

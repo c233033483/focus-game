@@ -23,19 +23,19 @@ MonoBehaviour:
   dailyOrders:
   - day: 1
     sandwichIngredients: 010000000000000002000000
-    coffeeIngredients: 0500000004000000
+    coffeeIngredients: 
   - day: 2
-    sandwichIngredients: 010000000000000002000000
+    sandwichIngredients: 02000000
     coffeeIngredients: 
   - day: 3
-    sandwichIngredients: 010000000000000002000000
-    coffeeIngredients: 
+    sandwichIngredients: 
+    coffeeIngredients: 0500000006000000
   - day: 4
-    sandwichIngredients: 010000000000000002000000
-    coffeeIngredients: 
+    sandwichIngredients: 0100000000000000
+    coffeeIngredients: 0500000006000000
   - day: 5
-    sandwichIngredients: 010000000000000002000000
-    coffeeIngredients: 
+    sandwichIngredients: 0200000000000000
+    coffeeIngredients: 0500000006000000
   dailyDialogue:
   - day: 1
     introDialogue: {fileID: 11400000, guid: ae16027d4dd20394881782f8d656aec4, type: 2}
@@ -68,5 +68,5 @@ MonoBehaviour:
     correctOrderDialogue: {fileID: 11400000, guid: 31b98f590a846cd4a8af1f25f3ea6c98, type: 2}
     incorrectOrderDialogue: {fileID: 11400000, guid: d6be0e0bde0a2fd4fb1eea170634c7a4, type: 2}
   failureDialogue: {fileID: 11400000, guid: 0b7ee9e40eb00c547843500f2e72e1a1, type: 2}
-  activeCustomer: 0
+  activeCustomer: 1
   failedDays: 0

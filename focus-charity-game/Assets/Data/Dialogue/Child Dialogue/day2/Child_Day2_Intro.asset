@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DialogueAssetSO
   dialogue:
   - Hello again!
-  - Can you make me a cheese sandwich please?
+  - Can you make me a ham and cheese sandwich please?
   unlockOrderButton: 1

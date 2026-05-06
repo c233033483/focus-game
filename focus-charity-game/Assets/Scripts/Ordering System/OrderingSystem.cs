@@ -69,7 +69,7 @@ public class OrderingSystem : MonoBehaviour
         {
             IndexBookManager.Instance.IncreaseCustomerTrust(currentCustomer);
             trustPanel.SetActive(true); //trigger animation here
-
+            StartCoroutine(FadeText(trustPanel.GetComponentInChildren<TMP_Text>()));
             //Audio
             randomsound.SelectedAudio(0);
             heart.Play();
@@ -99,5 +99,30 @@ public class OrderingSystem : MonoBehaviour
         yield return new WaitForSeconds(1f);
         DialogueController.Instance.StartOutroDialogue(wasOrderCorrect);
         GameplayManager.Instance.UpdateExpression(wasOrderCorrect);
+    }
+    
+    IEnumerator FadeText(TMP_Text text)
+    {
+        var fadeDuration = 0.5f;
+        
+        // Fade in
+        for (float t = 0; t < 1; t += Time.deltaTime / fadeDuration)
+        {
+            text.alpha = t;
+            yield return null;
+        }
+
+        var displayDuration = 2f;
+        
+        yield return new WaitForSeconds(displayDuration);
+
+        // Fade out
+        for (float t = 1; t > 0; t -= Time.deltaTime / fadeDuration)
+        {
+            text.alpha = t;
+            yield return null;
+        }
+        
+        trustPanel.SetActive(false);
     }
 }

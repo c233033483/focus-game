@@ -74,8 +74,11 @@ public class DialogueController : MonoBehaviour
         DailyDialogue todaysDialogue = currentCustomer.endgameDialogue;
         DialogueAssetSO asset = wasServiceCorrect ? 
             todaysDialogue.correctOrderDialogue : todaysDialogue.incorrectOrderDialogue;
-        GameplayManager.Instance.NextCustomer();
-    }
+        GameplayManager.Instance.UpdateExpression(wasServiceCorrect); // move here
+        StartCoroutine(RunDialogue(asset, () =>
+        {
+            GameplayManager.Instance.NextCustomer();
+        }));    }
 
     private void CheckTrust()
     {

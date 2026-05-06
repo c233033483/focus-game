@@ -70,4 +70,12 @@ public class CustomerSO : ScriptableObject
         if (failedDays >= 2)
             activeCustomer = false;
     }
+    
+    public void ResetData()
+    {
+        trustLevel = 0;
+        hintsIndex = 0;
+        activeCustomer = true;
+        failedDays = 0;
+    }
 }

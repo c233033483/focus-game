@@ -15,4 +15,5 @@ MonoBehaviour:
   dialogue:
   - Good morning, love.
   - "Can I have a coffee with water please?\t"
+  - With a ham and tomato sandwich, please.
   unlockOrderButton: 1
