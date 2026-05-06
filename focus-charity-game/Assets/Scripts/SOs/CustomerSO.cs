@@ -73,7 +73,7 @@ public class CustomerSO : ScriptableObject
     
     public void ResetData()
     {
-        trustLevel = 2;
+        trustLevel = 0;
         hintsIndex = 0;
         activeCustomer = true;
         failedDays = 0;

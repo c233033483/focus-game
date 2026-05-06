@@ -3,11 +3,12 @@ using UnityEngine;
 public enum Services
 {
     Housing,
-    Legal,
-    StateServices,
-    SleepingRoughSupport,
-    ChildSupport,
-    FinancialSupport,
+    MentalHealth,
+    JobCentre,
+    PhysicalHealth,
+    Childcare,
+    BudgetingServices,
+    FoodBank
 }
 
 public class ServiceSelector : MonoBehaviour

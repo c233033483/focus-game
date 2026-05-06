@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: GrandmaCustomer
   m_EditorClassIdentifier: Assembly-CSharp::CustomerSO
   customerName: Rosie
-  idleExpression: {fileID: -804254597, guid: 89b214962d3208944af3eccba0342c5d, type: 3}
-  sadExpression: {fileID: -1120599100, guid: 89b214962d3208944af3eccba0342c5d, type: 3}
-  happyExpression: {fileID: -1857088309, guid: 89b214962d3208944af3eccba0342c5d, type: 3}
+  idleExpression: {fileID: -2054742766, guid: aa1c92ad057ed1942b6e9ef352605e4a, type: 3}
+  sadExpression: {fileID: 2084815570, guid: aa1c92ad057ed1942b6e9ef352605e4a, type: 3}
+  happyExpression: {fileID: 1233860176, guid: aa1c92ad057ed1942b6e9ef352605e4a, type: 3}
   customerIndex: 3
   trustLevel: 0
   trustGoal: 3
