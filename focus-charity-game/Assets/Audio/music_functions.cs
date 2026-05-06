@@ -36,12 +36,15 @@ public class music_functions : MonoBehaviour
         {
             case 1:
                 bass.volume = musicVolume;
+                bass.time = chords.time;
                 break;
             case 2:
                 drums.volume = musicVolume;
+                drums.time = chords.time;
                 break;
             case 3:
                 guitar.volume = musicVolume;
+                guitar.time = chords.time;
                 break;
 
         }
