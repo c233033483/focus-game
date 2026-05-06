@@ -61,6 +61,10 @@ public class GameplayManager : MonoBehaviour
         dayStartPanel.SetActive(true);
         dayIndex = 1;
         dayText.text = "Day 1";
+        
+        foreach (var customer in dailyQueues[0].customersInOrder)
+            customer.ResetData();
+
     }
     
     public void DayStart()

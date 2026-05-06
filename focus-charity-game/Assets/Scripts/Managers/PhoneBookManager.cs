@@ -31,12 +31,13 @@ public class PhoneBookManager : MonoBehaviour
     {
         if (service == currentCustomer.serviceRequired)
         {
+            print("Service right");
             DialogueController.Instance.StartHelpOutroDialogue(true);
         }
         else
         {
+            print("service wrong");
             DialogueController.Instance.StartHelpOutroDialogue(false);
-            GameplayManager.Instance.UpdateExpression(false);
         }
         
         Debug.Log(service + " selected for " + currentCustomer.name);

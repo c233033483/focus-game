@@ -23,19 +23,19 @@ MonoBehaviour:
   dailyOrders:
   - day: 1
     sandwichIngredients: 0100000002000000
-    coffeeIngredients: 050000000400000006000000
+    coffeeIngredients: 
   - day: 2
-    sandwichIngredients: 0100000002000000
+    sandwichIngredients: 02000000
     coffeeIngredients: 
   - day: 3
     sandwichIngredients: 0100000002000000
-    coffeeIngredients: 
+    coffeeIngredients: 0500000006000000
   - day: 4
-    sandwichIngredients: 0100000002000000
-    coffeeIngredients: 
+    sandwichIngredients: 02000000
+    coffeeIngredients: 06000000
   - day: 5
     sandwichIngredients: 0100000002000000
-    coffeeIngredients: 
+    coffeeIngredients: 0500000006000000
   dailyDialogue:
   - day: 1
     introDialogue: {fileID: 11400000, guid: 1b83756606c861d4e9b2c9848cfc93d2, type: 2}

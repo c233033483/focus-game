@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Grandma_Hint_2
   m_EditorClassIdentifier: Assembly-CSharp::DialogueAssetSO
   dialogue:
-  - This will take my mind off of things for now.
-  - 'It''s '
+  - "I've had to cut back on a lot of things lately.\t"
+  - It all adds up, doesn't it...
   unlockOrderButton: 0

@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DialogueAssetSO
   dialogue:
   - Hi there.
-  - I'll have a sandwich pleased with cheese and tomatoes.
-  - And a coffee with milk as well please.
+  - I'll have a sandwich please with cheese and tomatoes.
+  - And a coffee with water as well please.
   unlockOrderButton: 1
