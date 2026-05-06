@@ -19,7 +19,7 @@ MonoBehaviour:
   customerIndex: 0
   trustLevel: 3
   trustGoal: 3
-  serviceRequired: 4
+  serviceRequired: 1
   dailyOrders:
   - day: 1
     sandwichIngredients: 00000000
