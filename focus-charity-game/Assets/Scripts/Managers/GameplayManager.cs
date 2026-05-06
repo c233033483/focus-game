@@ -45,7 +45,6 @@ public class GameplayManager : MonoBehaviour
     public int customersHelped;
     [SerializeField] private GameObject endGamePanelGood;
     [SerializeField] private GameObject endGamePanelBad;
-    [SerializeField] private GameObject endGamePanelFailed;
     
     public HideUI hideUI;
 
@@ -101,7 +100,7 @@ public class GameplayManager : MonoBehaviour
         }
         else if (AllCustomersFailed())
         {
-            endGamePanelFailed.SetActive(true);
+            endGamePanelBad.SetActive(true);
             return;
         }
         else
