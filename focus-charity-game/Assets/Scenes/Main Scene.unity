@@ -8512,10 +8512,10 @@ RectTransform:
   m_Children:
   - {fileID: 980320964}
   - {fileID: 59257523}
-  - {fileID: 760538135}
   - {fileID: 1246913157}
   - {fileID: 2090836221}
   - {fileID: 454278735}
+  - {fileID: 760538135}
   - {fileID: 1558227125}
   m_Father: {fileID: 1946761825}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
