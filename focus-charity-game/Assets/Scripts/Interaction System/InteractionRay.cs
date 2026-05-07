@@ -38,6 +38,7 @@ public class InteractionRay : MonoBehaviour
         switchCamAction.performed -= SwitchActiveCamera;
     }
     
+    /* Getting rid of this so the tip jar works.   
     public void SetInteractionEnabled(bool interactionEnabled)
     {
         if (interactionEnabled)
@@ -45,7 +46,7 @@ public class InteractionRay : MonoBehaviour
         else
             pressAction.Disable();
     }
-    
+    */ 
     
     private void OnInteract(InputAction.CallbackContext ctx)
     {

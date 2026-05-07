@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: Grandma_Trust_RequestHelp
   m_EditorClassIdentifier: Assembly-CSharp::DialogueAssetSO
   dialogue:
-  - Do you have any advice for me?
+  - By chance, do you know how I can get help, lovey?
+  - I'd appreciate that a lot.
   unlockOrderButton: 0

@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DialogueAssetSO
   dialogue:
   - This doesn't seem like much help for me.
-  - Thanks anyways...
+  - Thanks anyways, dear...
   unlockOrderButton: 0

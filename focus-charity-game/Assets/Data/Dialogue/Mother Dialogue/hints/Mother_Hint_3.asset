@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Mother_Hint_3
   m_EditorClassIdentifier: Assembly-CSharp::DialogueAssetSO
   dialogue:
-  - Hopefully we can cook for ourselves when we get a new place.
-  - I was wondering if you would be able to help me?
+  - Hopefully one day we will have our own home.
+  - 'I don''t want my son to go through this. '
   unlockOrderButton: 0

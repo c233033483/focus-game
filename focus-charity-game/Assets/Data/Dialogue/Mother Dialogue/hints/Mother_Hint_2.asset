@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DialogueAssetSO
   dialogue:
   - I've been running around for the whole day.
-  - I'm trying to find accommodation for me and my son.
+  - I'm trying to find a home for me and my son.
   - I didn't even get to have breakfast this morning...
   unlockOrderButton: 0

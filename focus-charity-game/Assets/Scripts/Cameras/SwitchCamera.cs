@@ -26,19 +26,19 @@ public class SwitchCamera : MonoBehaviour
                 CameraManager.SwitchCamera(orderCam);
                 orderingUiPanel.SetActive(true);
                 cookingUiPanel.SetActive(false);
-                interactionRay.SetInteractionEnabled(false);
+                //interactionRay.SetInteractionEnabled(false);
                 break;
             case 2:
                 CameraManager.SwitchCamera(sandwichCam);
                 cookingUiPanel.SetActive(true);
                 orderingUiPanel.SetActive(false);
-                interactionRay.SetInteractionEnabled(true);
+                //interactionRay.SetInteractionEnabled(true);
                 break;
             case 3:
                 CameraManager.SwitchCamera(coffeeCam);
                 cookingUiPanel.SetActive(true);
                 orderingUiPanel.SetActive(false);
-                interactionRay.SetInteractionEnabled(true);
+                //interactionRay.SetInteractionEnabled(true);
                 break;
         }
     }

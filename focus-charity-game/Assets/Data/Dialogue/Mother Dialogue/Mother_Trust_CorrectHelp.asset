@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Mother_Trust_CorrectHelp
   m_EditorClassIdentifier: Assembly-CSharp::DialogueAssetSO
   dialogue:
-  - This sounds really helpful.
-  - Thanks for this! And all the yummy food.
+  - This is great.
+  - This will be very helpful.
+  - Thanks so much.
   unlockOrderButton: 0

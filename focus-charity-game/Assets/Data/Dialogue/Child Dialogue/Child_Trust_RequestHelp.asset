@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Child_Trust_RequestHelp
   m_EditorClassIdentifier: Assembly-CSharp::DialogueAssetSO
   dialogue:
-  - Do you have any advice for me?
+  - Can you help me?
   unlockOrderButton: 0

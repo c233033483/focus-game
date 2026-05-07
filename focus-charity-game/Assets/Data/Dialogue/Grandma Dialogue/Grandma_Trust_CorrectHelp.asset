@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Grandma_Trust_CorrectHelp
   m_EditorClassIdentifier: Assembly-CSharp::DialogueAssetSO
   dialogue:
-  - This sounds really helpful.
-  - Thanks for this! And all the yummy food.
+  - This sounds great dear.
+  - Thank you for your help and always listening to me.
   unlockOrderButton: 0
