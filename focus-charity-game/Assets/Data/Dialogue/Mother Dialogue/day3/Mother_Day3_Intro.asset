@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DialogueAssetSO
   dialogue:
   - Good afternoon.
-  - I'll just have a coffee with milk today.
+  - Can I get a cheese sandwich with a coffee please?
   unlockOrderButton: 1

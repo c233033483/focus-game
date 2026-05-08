@@ -47,7 +47,7 @@ public class IndexBookManager : MonoBehaviour
         foreach (GameObject indexSlot in indexSlots)
         {
             var button = indexSlot.transform.GetComponentInChildren<Button>();
-            button.enabled = false;
+            button.interactable = false;
         }
         indexBookObject.SetActive(false);
     }
@@ -86,7 +86,7 @@ public class IndexBookManager : MonoBehaviour
     {
         Debug.Log($"Enabling help for {customer.customerName} at index {customer.customerIndex}");
         var button = indexSlots[customer.customerIndex].transform.GetComponentInChildren<Button>();
-        button.enabled = true;
+        button.interactable = true;
         Debug.Log("Enable Help for " + customer.name + " at button " + button);
     }
 }
